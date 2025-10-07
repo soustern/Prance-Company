@@ -10,7 +10,7 @@ const Hero = (): JSX.Element => {
     return (
         <section className="relative z-0 h-[85vh] flex flex-col items-center justify-center bg-amber-300 px-4 py-12">
             <div className="absolute z-0 inset-0 flex items-center justify-center h-full pt-20">
-                { size <= 700 ?<img src="src\assets\heroMobile.webp" alt="" className="object-cover w-full h-full" /> : <img src="src\assets\heroDesktop.webp" alt="" /> }
+                { size <= 700 ?<img src="public\heroMobile.webp" alt="" className="object-cover w-full h-full" /> : <img src="src\assets\heroDesktop.webp" alt="" /> }
                 <div className="absolute z-0 inset-0 bg-[var(--color-bg-primary)]/98 backdrop-blur-sm mix-blend-multiply"></div>
             </div>
             <h1 className="relative z-10 text-3xl font-normal text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
