@@ -1,1 +1,17 @@
+@import url(`https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap`);
 @import "tailwindcss";
+
+.font-sans { font-family: 'Cal Sans', system-ui, -apple-system, sans-serif;}
+
+:root {
+  --color-bg-primary: #112648;
+  --color-accent-primary: #199a6a;
+  --color-accent-secondary: #b78937;
+  --color-text-primary: theme('colors.slate.50');
+}
+
+@theme {
+  --color-bg-primary: var(--color-bg-primary);
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-secondary: var(--color-accent-secondary);
+}
