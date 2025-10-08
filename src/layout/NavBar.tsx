@@ -31,7 +31,7 @@ const NavBar = (): JSX.Element => {
                     </div>
                 </div>
                 <AnimatePresence>{isOpen && <motion.div id="menu" initial={{maxHeight: 0}} animate={{maxHeight: "100vh"}} transition={{duration: 0.15, ease: "easeInOut"}} className="bg-[var(--color-bg-primary)] w-full overflow-hidden" exit={{height: 0}}>
-                    <div className="px-8 py-8 h-full overflow-y-auto">
+                    <div className="px-8 py-8 h-[120vh] overflow-y-auto">
                         <ul className="w-full flex flex-col items-start gap-8">
                             {
                                 navOptions.map((option, index) => {
