@@ -29,7 +29,7 @@ const NavBar = (): JSX.Element => {
                         </motion.button>
                     </div>
                 </div>
-                <AnimatePresence>{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "100vh"}} transition={{duration: 0.15, ease: "easeInOut"}} className="bg-[var(--color-bg-primary)] px-8 py-8 w-full overflow-hidden" exit={{height: 0}}>
+                <AnimatePresence>{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "100vh"}} transition={{duration: 0.15, ease: "easeInOut"}} className="bg-[var(--color-bg-primary)] px-8 py-8 w-full overflow-y-auto" exit={{height: 0}}>
                     <ul className="w-full flex flex-col items-start gap-8">
                         {
                             navOptions.map((option, index) => {
