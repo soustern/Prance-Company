@@ -2,6 +2,7 @@ import {  useState, type JSX } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 import PrimaryButton from "../components/PrimaryButton";
 import { AnimatePresence, motion } from "motion/react";
+import logo from "../assets/logo.webp";
 
 const NavBar = (): JSX.Element => {
     const size = useWindowSize();
@@ -19,7 +20,7 @@ const NavBar = (): JSX.Element => {
             <nav className="bg-[var(--color-bg-primary)] py-3 px-2">
                 <div className="flex items-center justify-between">
                     <div id="logo">
-                        <img src="public\logo.webp" alt="" />
+                        <img src={logo} alt="" />
                     </div>
                     <div id="hamburger">
                         <motion.button whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
