@@ -12,18 +12,19 @@ const NavBar = (): JSX.Element => {
 
 
     // TODO: Create mobile logic where the nav options work and have animations
+    // TODO: Make mobile menu scrollable
 
     if (size <= 700)
     {
         return (
             
-            <nav className="bg-[var(--color-bg-primary)] py-3 px-2">
+            <nav className="bg-[var(--color-bg-primary)] px-2">
                 <div className="flex items-center justify-between">
                     <div id="logo">
                         <img src={logo} className="max-w-[120px]" alt="" />
                     </div>
                     <div id="hamburger">
-                        <motion.button whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                        <motion.button whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
                             {
                                 isOpen ? <i className="fa-solid fa-xmark text-slate-50 text-4xl"></i> : <i className="fa-solid fa-bars text-slate-50 text-4xl"></i>
                             }
@@ -31,7 +32,7 @@ const NavBar = (): JSX.Element => {
                     </div>
                 </div>
                 <AnimatePresence>{isOpen && <motion.div id="menu" initial={{maxHeight: 0}} animate={{maxHeight: "100vh"}} transition={{duration: 0.15, ease: "easeInOut"}} className="bg-[var(--color-bg-primary)] w-full overflow-hidden" exit={{height: 0}}>
-                    <div className="px-8 py-8 h-[120vh] overflow-y-auto">
+                    <div className="px-8 pt-8 pb-30 h-screen overflow-y-auto">
                         <ul className="w-full flex flex-col items-start gap-8">
                             {
                                 navOptions.map((option, index) => {

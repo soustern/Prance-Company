@@ -1,4 +1,5 @@
 import './App.css'
+import About from './layout/About'
 import Hero from './layout/hero'
 import Navbar from './layout/NavBar'
 
@@ -11,6 +12,7 @@ function App() {
       </header>
       <main className='font-sans'>
         <Hero></Hero>
+        <About></About>
       </main>
       <footer></footer>
     </>
