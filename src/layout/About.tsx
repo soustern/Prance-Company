@@ -1,4 +1,4 @@
-import { use, useRef, type JSX } from "react"
+import {  useRef, type JSX } from "react"
 import about from "../assets/about.png";
 import { useGSAP } from "@gsap/react";
 import logoAbout from "../assets/logoAbout.webp";
