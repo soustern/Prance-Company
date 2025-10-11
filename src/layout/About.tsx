@@ -145,13 +145,13 @@ const About = (): JSX.Element => {
                 </div>
                 <div className="bg-[var(--color-bg-primary)] z-20 h-5 w-35 absolute inset-0"></div>
             </div>
-            <div ref={backgroundRef} className="absolute z-0 inset-0 bg-slate-100 w-full h-full transform origin-center scale-x-80 rounded-4xl"></div>
+            <div ref={backgroundRef} className="absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-4xl"></div>
             <div className="relative z-10 pb-8">
                 <img src={about} ref={imageRef} className="max-w-[280px] relative z-10" alt="" />
                 <img src={about} ref={imageBlurRef} className="max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
-            <h2 ref={aboutHeading} className="relative z-10 text-[var(--color-bg-primary)] font-bolds text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
-            <p ref={aboutParagraph} className="relative z-10 text-center font-light color-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
+            <h2 ref={aboutHeading} className="relative z-10 text-[var(--color-bg-primary)] font-medium text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
+            <p ref={aboutParagraph} className="relative z-10 text-center font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
             <div className="w-full" ref={buttonRef}>
                 <PrimaryButton text="Vamos conversar"></PrimaryButton>
             </div>

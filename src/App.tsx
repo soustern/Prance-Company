@@ -1,7 +1,9 @@
 import './App.css'
 import About from './layout/About'
+import AnimationWrapper from './layout/AnimationWrapper'
 import Hero from './layout/hero'
 import Navbar from './layout/NavBar'
+import Services from './layout/Services'
 
 function App() {
 
@@ -10,9 +12,11 @@ function App() {
       <header className='font-sans fixed inset-0 z-50'>
         <Navbar></Navbar>
       </header>
-      <main className='font-sans'>
+      <main className='font-sans relative'>
+        <AnimationWrapper></AnimationWrapper>
         <Hero></Hero>
         <About></About>
+        <Services></Services>
       </main>
       <footer></footer>
     </>
