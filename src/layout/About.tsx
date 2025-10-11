@@ -133,14 +133,14 @@ const About = (): JSX.Element => {
     return (
         <section className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8">
             <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 z-0 gap-0">
-                <div className="bg-slate-100 z-10 h-10 w-10 relative transform translate-x-1.5">
+                <div className="bg-slate-200 z-10 h-10 w-10 relative transform translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>
                 </div>
-                <div className="bg-slate-100 z-30 h-10 w-13 rounded-t-full relative">
+                <div className="bg-slate-200 z-30 h-10 w-13 rounded-t-full relative">
                     <i ref={iconRef} className="fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                     <img ref={logoRef} src={logoAbout} className="w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
                 </div>
-                <div className="bg-slate-100 z-10 h-10 w-10 relative transform -translate-x-1.5">
+                <div className="bg-slate-200 z-10 h-10 w-10 relative transform -translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-bl-full absolute inset-0 "></div>
                 </div>
                 <div className="bg-[var(--color-bg-primary)] z-20 h-5 w-35 absolute inset-0"></div>
