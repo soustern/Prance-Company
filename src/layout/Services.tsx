@@ -3,6 +3,7 @@ import { useRef, type JSX } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import Card from "../components/Card";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -24,7 +25,6 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "top bottom",
                 end: "top center",
-                markers: true,
                 scrub: true,
             }
         })
@@ -46,7 +46,8 @@ const Services = (): JSX.Element => {
     return (
         <section ref={sectionRef} className="px-4 py-8 bg-slate-800">
             <h2 ref={servicesHeading} className="font-medium text-center text-2xl leading-tight pb-4 text-slate-200">3 pilares essenciais para <br></br> escalar sua marca</h2>
-            <p ref={servicesParagraph} className="text-center font-light pb-4 text-slate-300">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
+            <p ref={servicesParagraph} className="text-center font-light pb-8 text-slate-300">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
+            <Card></Card>
         </section>
     )
 }
