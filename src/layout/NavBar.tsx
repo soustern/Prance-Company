@@ -26,7 +26,7 @@ const NavBar = (): JSX.Element => {
                     <div id="hamburger">
                         <motion.button whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
                             {
-                                isOpen ? <i className="fa-solid fa-xmark text-slate-50 text-4xl"></i> : <i className="fa-solid fa-bars text-slate-50 text-4xl"></i>
+                                isOpen ? <i className="fa-solid fa-xmark text-slate-200 text-4xl"></i> : <i className="fa-solid fa-bars text-slate-200 text-4xl"></i>
                             }
                         </motion.button>
                     </div>
@@ -39,7 +39,7 @@ const NavBar = (): JSX.Element => {
                                     return (
                                         <li className="py-4 w-full relative" onClick={() => setIsOpen(false)}>
                                             <motion.div className="flex items-center justify-between" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: index * 0.08}}>
-                                                <p className="text-slate-50 text-2xl font-medium">{option}</p>
+                                                <p className="text-slate-200 text-2xl font-medium">{option}</p>
                                                 <i className="fa-solid fa-arrow-right text-slate-300 text-xl"></i>
                                             </motion.div>
                                             <motion.div initial={{width: 0}} animate={{width: "100%"}} transition={{duration: 0.2, delay: index * 0.08}}  className="h-[1px] bg-slate-300 left-0 top-full absolute"></motion.div>
