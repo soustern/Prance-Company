@@ -59,9 +59,11 @@ const Services = (): JSX.Element => {
         });
 
         tl.to(secondCardRef.current, {
+            willChange: "transform",
             yPercent: -90,
             duration: 0.2,
         }).to(thirdCardRef.current, {
+            willChange: "transform",
             yPercent: -90,
             duration: 0.2,
         })
