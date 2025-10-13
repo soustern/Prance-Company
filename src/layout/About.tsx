@@ -151,7 +151,28 @@ const About = (): JSX.Element => {
             }
         })
 
-        return () => {ScrollTrigger.getAll().forEach(trigger => trigger.kill()); split.revert()};
+       if (document.readyState === "complete")
+        {
+            ScrollTrigger.refresh();
+        }
+        else {
+            document.addEventListener("load", () => {
+                ScrollTrigger.refresh();
+            })
+        }
+
+        const timeoutId = setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 100);
+
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
+            split.revert();
+
+            window.removeEventListener("load", () => ScrollTrigger.refresh());
+            clearTimeout(timeoutId);
+        };
 
     }, []);
 
