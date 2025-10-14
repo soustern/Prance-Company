@@ -8,6 +8,9 @@ interface cardProps {
     className?: string
 }
 
+// TODO: Add Prop for button onClick
+// TODO: Fix Icon Positioning
+
 const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className}, ref): JSX.Element => {
     return (
         <article ref={ref} className={`bg-slate-200 rounded-4xl px-8 py-8 shadow-xl border border-[var(--color-accent-secondary)] ${className}`}>

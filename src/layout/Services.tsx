@@ -162,6 +162,9 @@ const Services = (): JSX.Element => {
         };
     });
 
+
+    // TODO: Add Links to the cards buttons
+
     return (
     <section ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-4 py-8 bg-slate-800 flex flex-col items-center relative">
             <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
@@ -178,7 +181,9 @@ const Services = (): JSX.Element => {
                 <img loading="lazy" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
-            <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform] text-center font-light pb-8 text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes. Fundou a Prance Company para transformar marcas em referências no mercado.</p>
+            <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform] text-center font-light pb-8 text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
+            Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
+            Fundou a Prance Company para transformar marcas em referências no mercado.</p>
         </section>
     )
 }

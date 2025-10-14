@@ -7,6 +7,9 @@ interface PrimaryButtonProps {
     className?: string;
 }
 
+// TODO: Add Prop for button onClick
+
+// TODO: Add hover animation and on press animation
 const PrimaryButton = ({text, children, className}: PrimaryButtonProps): JSX.Element => {
 
     return (
