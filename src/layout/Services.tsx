@@ -24,10 +24,14 @@ const Services = (): JSX.Element => {
     const imageBlurRef = useRef<HTMLImageElement>(null);
 
     useGSAP(() => {
+
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
+
+        console.log("SplitText existe?", SplitText);
         const split = new SplitText(servicesHeading.current, {type: "lines"});
-        
+        console.log("Linhas divididas:", split.lines);
+
         gsap.from(split.lines, {
             y: 100,
             opacity: 0,
@@ -39,9 +43,9 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "top bottom",
                 end: "top center",
-                scrub: 1,
+                scrub: true,
             }
-        })
+        });
 
         // TODO: Make the timing of this animation better
         gsap.from(servicesParagraph.current, {
@@ -54,7 +58,7 @@ const Services = (): JSX.Element => {
                 trigger: servicesHeading.current,
                 start: "top 80%",
                 end: "top 40%",
-                scrub: 1,
+                scrub: false,
             }
         })
 
@@ -63,7 +67,7 @@ const Services = (): JSX.Element => {
                 trigger: ".card-wrapper",
                 start: "-=100px top",
                 end: "bottom center",
-                scrub: 1,
+                scrub: true,
                 pin: true,
             }
         });
@@ -88,8 +92,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "80% center",
                 end: "85% center",
-                scrub: 1,
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -102,8 +105,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "80% center",
                 end: "85% center",
-                scrub: 1,
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -117,8 +119,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "87% center",
                 end: "91% center",
-                scrub: 1,
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         })
 
@@ -132,35 +133,23 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "92% center",
                 end: "95% center",
-                scrub: 1,
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         })
 
-
-        if (document.readyState === "complete")
-        {
+        const onLoad = (ev?: Event) => {
             ScrollTrigger.refresh();
-        }
-        else {
-            document.addEventListener("load", () => {
-                ScrollTrigger.refresh();
-            })
-        }
-
-        const timeoutId = setTimeout(() => {
-            ScrollTrigger.refresh();
-        }, 100);
-
+        };
+        
+        window.addEventListener("load", onLoad);
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
-            split.revert();
+            split?.revert();
 
-            window.removeEventListener("load", () => ScrollTrigger.refresh());
-            clearTimeout(timeoutId);
+            window.removeEventListener("load", onLoad);
         };
-    });
+    }, {scope: sectionRef});
 
 
     // TODO: Add Links to the cards buttons

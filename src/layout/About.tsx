@@ -36,9 +36,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "top center",
                 end: "+=100 center",
-                scrub: 1,
-                
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -50,9 +48,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "+=50 center",
                 end: "bottom center",
-                scrub: 1,
-                
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -66,9 +62,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: 1,
-                
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -82,9 +76,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: 1,
-                
-                toggleActions: "play none none reverse",
+                scrub: false,
             }
         });
 
@@ -97,9 +89,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: 1,
-                
-                toggleActions: "play none none reverse",
+                scrub: false,                
             }
         });
 
@@ -118,7 +108,7 @@ const About = (): JSX.Element => {
                 trigger: imageRef.current,
                 start: "top center",
                 end: "center center",
-                scrub: 1,
+                scrub: false,
             }
         })
 
@@ -132,7 +122,7 @@ const About = (): JSX.Element => {
                 trigger: imageRef.current,
                 start: "center center",
                 end: "bottom center",
-                scrub: 1,
+                scrub: false,
             }
         })
 
@@ -147,7 +137,7 @@ const About = (): JSX.Element => {
                 trigger: aboutParagraph.current,
                 start: "center bottom",
                 end: "+=400 bottom",
-                scrub: 1,
+                scrub: false,
             }
         })
 
