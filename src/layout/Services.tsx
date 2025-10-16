@@ -135,7 +135,7 @@ const Services = (): JSX.Element => {
             }
         })
 
-        const onLoad = (ev?: Event) => {
+        const onLoad = () => {
             ScrollTrigger.refresh();
         };
         
