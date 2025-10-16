@@ -72,11 +72,11 @@ const Services = (): JSX.Element => {
 
         tl.to(secondCardRef.current, {
             willChange: "transform",
-            top: 10,
+            top: 20,
             duration: 0.2,
         }).to(thirdCardRef.current, {
             willChange: "transform",
-            top: 20,
+            top: 40,
             duration: 0.2,
         })
 
@@ -158,13 +158,13 @@ const Services = (): JSX.Element => {
             <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
             <p ref={servicesParagraph} className="[will-change: opacity, transform] text-center font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
             <div className="relative cards flex flex-col mb-8 z-10">
-                <div className="card-wrapper flex flex-col h-[120vh] relative">
+                <div className="card-wrapper flex flex-col h-[120vh] relative items-center">
                     <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." icon="pen-nib"></Card>
                     <Card ref={secondCardRef} className="z-20 card absolute top-100" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." icon="photo-film"></Card>
                     <Card ref={thirdCardRef} className="z-30 card absolute top-110" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." icon="rocket"></Card>
                 </div>
-                <div className="relative z-10 h-[20vh] bg-amber-200"></div>
             </div>
+            <div className="relative z-10 h-[220px]"></div>
             <div className="relative z-10 pb-8 flex items-center">
                 <img loading="lazy" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
                 <img loading="lazy" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
