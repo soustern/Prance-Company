@@ -28,9 +28,7 @@ const Services = (): JSX.Element => {
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
 
-        console.log("SplitText existe?", SplitText);
         const split = new SplitText(servicesHeading.current, {type: "lines"});
-        console.log("Linhas divididas:", split.lines);
 
         gsap.from(split.lines, {
             y: 100,
@@ -158,13 +156,14 @@ const Services = (): JSX.Element => {
     <section ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-4 py-8 bg-slate-800 flex flex-col items-center relative">
             <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
             <p ref={servicesParagraph} className="[will-change: opacity, transform] text-center font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
-            <div className="relative min-h-[200vh] cards flex flex-col items-center justify-baseline mb-8 z-10">
-                <div className="card-wrapper h-full flex flex-col items-center justify-baseline gap-4">
+            <div className="relative cards flex flex-col items-center justify-baseline mb-8 z-10">
+                <div className="card-wrapper flex flex-col items-center justify-baseline gap-4">
                     <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." icon="pen-nib"></Card>
                     <Card ref={secondCardRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." icon="photo-film"></Card>
                     <Card ref={thirdCardRef} className="z-30 card transform -translate-y-[90%]" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." icon="rocket"></Card>
                 </div>
             </div>
+            <div className="relative z-10 h-[250px] bg-amber-200"></div>
             <div className="relative z-10 pb-8 flex items-center">
                 <img loading="lazy" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
                 <img loading="lazy" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
