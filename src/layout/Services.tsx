@@ -41,7 +41,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "top bottom",
                 end: "top center",
-                scrub: true,
+                scrub: 1,
             }
         });
 
@@ -56,7 +56,7 @@ const Services = (): JSX.Element => {
                 trigger: servicesHeading.current,
                 start: "top 80%",
                 end: "top 40%",
-                scrub: false,
+                scrub: 1,
             }
         })
 
@@ -65,7 +65,7 @@ const Services = (): JSX.Element => {
                 trigger: ".card-wrapper",
                 start: "-=100px top",
                 end: "bottom center",
-                scrub: true,
+                scrub: 1,
                 pin: true,
             }
         });
@@ -92,7 +92,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "80% center",
                 end: "85% center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -105,7 +105,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "80% center",
                 end: "85% center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -119,7 +119,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "87% center",
                 end: "91% center",
-                scrub: false,
+                scrub: 1,
             }
         })
 
@@ -133,7 +133,7 @@ const Services = (): JSX.Element => {
                 trigger: sectionRef.current,
                 start: "92% center",
                 end: "95% center",
-                scrub: false,
+                scrub: 1,
             }
         })
 

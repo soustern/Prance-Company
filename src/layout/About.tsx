@@ -36,7 +36,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "top center",
                 end: "+=100 center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -48,7 +48,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "+=50 center",
                 end: "bottom center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -62,7 +62,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -76,7 +76,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: false,
+                scrub: 1,
             }
         });
 
@@ -89,7 +89,7 @@ const About = (): JSX.Element => {
                 trigger: iconRef.current,
                 start: "center center",
                 end: "+=100 center",
-                scrub: false,                
+                scrub: 1,                
             }
         });
 
@@ -108,7 +108,7 @@ const About = (): JSX.Element => {
                 trigger: imageRef.current,
                 start: "top center",
                 end: "center center",
-                scrub: false,
+                scrub: 1,
             }
         })
 
@@ -122,7 +122,7 @@ const About = (): JSX.Element => {
                 trigger: imageRef.current,
                 start: "center center",
                 end: "bottom center",
-                scrub: false,
+                scrub: 1,
             }
         })
 
@@ -137,7 +137,7 @@ const About = (): JSX.Element => {
                 trigger: aboutParagraph.current,
                 start: "center bottom",
                 end: "+=400 bottom",
-                scrub: false,
+                scrub: 1,
             }
         })
 
