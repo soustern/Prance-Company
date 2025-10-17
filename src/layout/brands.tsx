@@ -37,7 +37,7 @@ const Brands = (): JSX.Element => {
 
     }, []);
 
-
+    // TODO: Create ScrollTrigger Animations
     return (
         <section className="bg-slate-200 flex flex-col items-center justify-center relative px-4 py-8">
             <h2 ref={brandsHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-8 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance</h2>

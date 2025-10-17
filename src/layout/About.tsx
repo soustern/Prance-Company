@@ -168,7 +168,7 @@ const About = (): JSX.Element => {
 
     return (
         <section className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8">
-            <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 z-0 gap-0">
+            <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0">
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>
                 </div>
@@ -179,7 +179,7 @@ const About = (): JSX.Element => {
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform -translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-bl-full absolute inset-0 "></div>
                 </div>
-                <div className="bg-[var(--color-bg-primary)] z-20 h-5 w-35 absolute inset-0"></div>
+                <div style={{clipPath: 'polygon(4% 100%, 28% 50%, 60% 50%, 100% 100%, 99% 1%, 0% 0%, 0% 100%)'}} className="bg-[var(--color-bg-primary)] z-20 h-10 w-35 absolute inset-0"></div>
             </div>
             <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-4xl"></div>
             <div className="relative z-10 pb-8">
