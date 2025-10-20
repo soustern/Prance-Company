@@ -1,6 +1,8 @@
 import type { JSX } from "react"
 import PrimaryButton from "../components/PrimaryButton"
 
+// TODO: Add correct links
+
 const Footer = (): JSX.Element => {
     return (
         <section className="flex flex-col justify-center relative px-4 py-8 bg-[var(--color-bg-primary)]">
