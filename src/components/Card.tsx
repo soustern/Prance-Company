@@ -19,7 +19,7 @@ const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, clas
                 {icon && <i className={`fa-solid fa-${icon} text-2xl text-[var(--color-accent-secondary)]`}></i>}
             </div> 
             <p className="text-slate-700 text-center font-light pb-8">{paragraph}</p>
-            <PrimaryButton className="pointer-events-auto relative z-50" text="Saiba Mais"></PrimaryButton>
+            <PrimaryButton link="https://wa.link/173tl9" className="pointer-events-auto relative z-50" text="Saiba Mais"></PrimaryButton>
         </article> 
     )
 })

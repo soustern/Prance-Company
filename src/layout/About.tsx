@@ -167,7 +167,7 @@ const About = (): JSX.Element => {
     }, []);
 
     return (
-        <section className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8">
+        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-45">
             <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0">
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>
@@ -189,7 +189,7 @@ const About = (): JSX.Element => {
             <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
             <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 text-center font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
             <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonRef}>
-                <PrimaryButton text="Vamos conversar" className="pointer-events-auto" ></PrimaryButton>
+                <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
             </div>
         </section>
     )

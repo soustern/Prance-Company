@@ -31,7 +31,7 @@ const Brands = (): JSX.Element => {
         const tl = gsap.timeline({repeat: -1});
         tl.to(allImages, {
             x: -marqueeWidth,
-            duration: 45,
+            duration: 40,
             ease: "none",
         });
 
@@ -39,19 +39,19 @@ const Brands = (): JSX.Element => {
 
     // TODO: Create ScrollTrigger Animations
     return (
-        <section className="bg-slate-200 flex flex-col items-center justify-center relative px-4 py-8">
-            <h2 ref={brandsHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-8 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance</h2>
-            <div className="w-[110%] overflow-x-hidden relative pb-8">
-                <div ref={marqueeRef} className="flex gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
-                    <img src={brand1} alt="" />
-                    <img src={brand2} alt="" />
-                    <img src={brand3} alt="" />
-                    <img src={brand4} alt="" />
-                    <img src={brand5} alt="" />
-                    <img src={brand6} alt="" />
+        <section id="brands-section" className="bg-slate-200 flex flex-col items-center justify-center relative px-4 py-8">
+            <h2 ref={brandsHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-12 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance:</h2>
+            <div className="w-[110%] overflow-x-hidden relative pb-12">
+                <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
+                    <img className="w-50 h-auto" src={brand1} alt="" />
+                    <img className="w-50 h-auto" src={brand2} alt="" />
+                    <img className="w-50 h-auto" src={brand3} alt="" />
+                    <img className="w-50 h-auto" src={brand4} alt="" />
+                    <img className="w-50 h-auto" src={brand5} alt="" />
+                    <img className="w-50 h-auto" src={brand6} alt="" />
                 </div>
             </div>
-            <PrimaryButton text="Vamos conversar"></PrimaryButton>
+            <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
         </section>
     )
 }
