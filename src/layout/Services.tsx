@@ -152,8 +152,8 @@ const Services = (): JSX.Element => {
     }, {scope: sectionRef});
 
 
-    // TODO: Fix card animation (I hate myself for having this idea)
     // TODO: Add Links to the cards buttons
+    // TODO: Fix Paragraph and heading srcolltrigger animations timing
 
     return (
     <section ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-4 py-8 bg-slate-800 flex flex-col items-center relative">
