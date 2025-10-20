@@ -2,6 +2,7 @@ import './App.css'
 import About from './layout/About'
 import AnimationWrapper from './layout/AnimationWrapper'
 import Brands from './layout/brands'
+import Footer from './layout/footer'
 import Hero from './layout/hero'
 import Navbar from './layout/NavBar'
 import Services from './layout/Services'
@@ -20,7 +21,9 @@ function App() {
         <Services></Services>
         <Brands></Brands>
       </main>
-      <footer></footer>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </>
   )
 }
