@@ -43,12 +43,12 @@ const Brands = (): JSX.Element => {
             <h2 ref={brandsHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-12 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance:</h2>
             <div className="w-[110%] overflow-x-hidden relative pb-12">
                 <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
-                    <img src={brand1} alt="" />
-                    <img src={brand2} alt="" />
-                    <img src={brand3} alt="" />
-                    <img src={brand4} alt="" />
-                    <img src={brand5} alt="" />
-                    <img src={brand6} alt="" />
+                    <img loading="lazy" src={brand1} alt="" />
+                    <img loading="lazy" src={brand2} alt="" />
+                    <img loading="lazy" src={brand3} alt="" />
+                    <img loading="lazy" src={brand4} alt="" />
+                    <img loading="lazy" src={brand5} alt="" />
+                    <img loading="lazy" src={brand6} alt="" />
                 </div>
             </div>
             <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>

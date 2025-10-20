@@ -1,8 +1,5 @@
 import { useRef, type JSX } from "react"
-import { useWindowSize } from "../hooks/useWindowSize"
 import SecondaryButton from "../components/SecondaryButton";
-import heroMobile from "../assets/heroMobile.webp";
-import heroDesktop from "../assets/heroDesktop.webp";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
@@ -16,8 +13,6 @@ const Hero = (): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
-
-    const size = useWindowSize();
 
     useGSAP(() => {
         const splitHeading = new SplitText(headingRef.current, {type: "lines"});
@@ -56,12 +51,7 @@ const Hero = (): JSX.Element => {
     }, []);
 
     return (
-        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-amber-300 px-4 pt-40">
-            <div className="absolute z-0 inset-0 flex items-center justify-center h-full ">
-                { size <= 700 ?<img src={heroMobile} alt="" className="object-cover w-full h-full" /> : <img src={heroDesktop} alt="" /> }
-                <div className="absolute z-0 inset-0 bg-[var(--color-bg-primary)]/78 backdrop-blur-sm mix-blend-multiply"></div>
-                <div className="absolute inset-0 z-0 bg-gradient-to-t from-[var(--color-bg-primary)] from-8% to-transparent to-50%"></div>
-            </div>
+        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-4 pt-40">
             <h1 ref={headingRef} className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
             <p ref={paragraphRef} className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
             <div ref={buttonRef} className="relatice z-10">

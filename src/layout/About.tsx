@@ -1,5 +1,5 @@
 import {  useRef, type JSX } from "react"
-import about from "../assets/about.png";
+import about from "../assets/about.webp";
 import { useGSAP } from "@gsap/react";
 import logoAbout from "../assets/logoAbout.webp";
 import { gsap } from "gsap";
@@ -173,8 +173,8 @@ const About = (): JSX.Element => {
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>
                 </div>
                 <div className="bg-slate-200 z-30 h-10 w-13 rounded-t-full relative">
-                    <i ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
+                    <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
+                    <img loading="lazy" ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
                 </div>
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform -translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-bl-full absolute inset-0 "></div>
