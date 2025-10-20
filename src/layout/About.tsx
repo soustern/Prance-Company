@@ -188,8 +188,8 @@ const About = (): JSX.Element => {
             </div>
             <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
             <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 text-center font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
-            <div className="w-full [will-change: transform, opacity]" ref={buttonRef}>
-                <PrimaryButton text="Vamos conversar" ></PrimaryButton>
+            <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonRef}>
+                <PrimaryButton text="Vamos conversar" className="pointer-events-auto" ></PrimaryButton>
             </div>
         </section>
     )

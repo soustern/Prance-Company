@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <header className='font-sans fixed inset-0 z-50'>
+      <header className='font-sans fixed inset-0 z-100 pointer-events-none'>
         <Navbar></Navbar>
       </header>
       <main className='font-sans relative'>

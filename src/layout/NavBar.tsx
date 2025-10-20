@@ -18,7 +18,7 @@ const NavBar = (): JSX.Element => {
     {
         return (
             
-            <nav className="bg-[var(--color-bg-primary)] px-2">
+            <nav className="bg-[var(--color-bg-primary)] px-2 pointer-events-auto">
                 <div className="flex items-center justify-between">
                     <div id="logo">
                         <img src={logo} className="max-w-[120px]" alt="" />
@@ -32,7 +32,7 @@ const NavBar = (): JSX.Element => {
                     </div>
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "auto"}} transition={{duration: 0.2, ease: "easeOut"}} className="bg-[var(--color-bg-primary)] w-full overflow-hidden will-change-transform" exit={{height: 0}} style={{contain: 'layout style paint'}}>
-                    <div className="px-8 pt-8 pb-30 h-screen overflow-y-auto">
+                    <div className={`px-8 pt-8 pb-30 h-screen overflow-y-auto ${isOpen ? `pointer-events-auto` : `pointer-events-none`}`}>
                         <ul className="w-full flex flex-col items-start gap-8">
                             {
                                 navOptions.map((option, index) => {
@@ -50,15 +50,20 @@ const NavBar = (): JSX.Element => {
                             <motion.li className="w-full [will-change: transform, opacity]" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.4}}>
                                 <PrimaryButton text="Vamos conversar"></PrimaryButton>
                             </motion.li>
-                            <li className="flex items-center gap-4 w-full">
-                                <motion.div className="w-full [will-change: transform, opacity]l" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.5}}>
-                                    <PrimaryButton>
+                            <li className="flex items-center gap-2 w-full justify-center">
+                                <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.5}}>
+                                    <PrimaryButton className="pointer-events-auto">
                                         <i className="fa-brands fa-linkedin-in"></i>
                                     </PrimaryButton>
                                 </motion.div>
-                                <motion.div className="w-full [will-change: transform, opacity]" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.6}}>
-                                    <PrimaryButton>
+                                <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.6}}>
+                                    <PrimaryButton className="pointer-events-auto">
                                         <i className="fa-brands fa-instagram"></i>
+                                    </PrimaryButton>
+                                </motion.div>
+                                <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.7}}>
+                                    <PrimaryButton className="pointer-events-auto">
+                                        <i className="fa-brands fa-facebook-f"></i>
                                     </PrimaryButton>
                                 </motion.div>
                             </li>
