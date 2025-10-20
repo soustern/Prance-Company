@@ -9,12 +9,18 @@ import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(SplitText)
 
-const Hero = (): JSX.Element => {
+interface heroProps {
+    fontsReady: boolean
+}
+
+const Hero = ({fontsReady}: heroProps): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
+        if (!fontsReady) return;
+
         const splitHeading = new SplitText(headingRef.current, {type: "lines"});
 
         gsap.from(splitHeading.lines, {
@@ -48,7 +54,7 @@ const Hero = (): JSX.Element => {
         return () => {
             splitHeading.revert();
         };
-    }, []);
+    }, {dependencies: [fontsReady]});
 
     return (
         <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-4 pt-40">

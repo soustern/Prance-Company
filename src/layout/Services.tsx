@@ -10,7 +10,11 @@ import servicesBackground from "../assets/servicesBackground.webp";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
-const Services = (): JSX.Element => {
+interface servicesProps {
+    fontsReady: boolean
+}
+
+const Services = ({fontsReady}: servicesProps): JSX.Element => {
     const servicesHeading = useRef<HTMLHeadingElement>(null);
     const servicesParagraph = useRef<HTMLParagraphElement>(null);
     const servicesSecondHeading = useRef<HTMLHeadingElement>(null);
@@ -24,6 +28,7 @@ const Services = (): JSX.Element => {
     const imageBlurRef = useRef<HTMLImageElement>(null);
 
     useGSAP(() => {
+        if (!fontsReady) return;
 
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
@@ -149,7 +154,7 @@ const Services = (): JSX.Element => {
 
             window.removeEventListener("load", onLoad);
         };
-    }, {scope: sectionRef});
+    }, {scope: sectionRef, dependencies: [fontsReady]});
 
 
     // TODO: Fix Paragraph and heading srcolltrigger animations timing

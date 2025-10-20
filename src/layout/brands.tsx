@@ -7,35 +7,57 @@ import brand5 from "../assets/brand5.webp";
 import brand6 from "../assets/brand6.webp";
 import gsap from "gsap"; 
 import PrimaryButton from "../components/PrimaryButton";
+import { useGSAP } from "@gsap/react";
 
-const Brands = (): JSX.Element => {
+interface brandsProps {
+    fontsReady: boolean
+}
+
+const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     const brandsHeading = useRef<HTMLHeadingElement>(null);
     const marqueeRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    useGSAP(() => {
+        if (!fontsReady) return;
+
         const marquee = marqueeRef.current;
         if (!marquee) return;
         
         const images = marquee.querySelectorAll("img");;
-
         images.forEach(img => {
             const clone = img.cloneNode(true);
             marquee.appendChild(clone);
         });
 
+        
         const allImages = marquee.querySelectorAll("img");
-        const marqueeWidth = marquee.scrollWidth / 2;
+        let marqueeWidth = 0;
 
         gsap.set(allImages, {x: 0});
 
         const tl = gsap.timeline({repeat: -1});
         tl.to(allImages, {
             x: -marqueeWidth,
-            duration: 40,
+            duration: 30,
             ease: "none",
         });
 
-    }, []);
+        const imagePromises = [...allImages].map(img => 
+            new Promise(resolve => {
+                if (img.complete) {
+                    resolve(true);
+                } else {
+                    img.onload = resolve;
+                }
+            })
+        );
+
+        Promise.all(imagePromises).then(() => {
+            marqueeWidth = marquee.scrollWidth / 2;
+            tl.play();
+        });
+
+    }, {dependencies: [fontsReady]});
 
     // TODO: Create ScrollTrigger Animations
     return (

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 import About from './layout/About'
 import AnimationWrapper from './layout/AnimationWrapper'
@@ -9,6 +10,16 @@ import Services from './layout/Services'
 
 function App() {
 
+  const [fontsReady, setFontsReady] = useState(false);
+
+  useEffect(() => {
+    const loadFonts = async () => {
+            await document.fonts.ready.then(() => setFontsReady(true));
+    }
+
+    loadFonts();
+  }, [])
+
   return (
     <>
       <header className='font-sans fixed inset-0 z-100 pointer-events-none'>
@@ -16,13 +27,13 @@ function App() {
       </header>
       <main className='font-sans relative'>
         <AnimationWrapper></AnimationWrapper>
-        <Hero></Hero>
-        <About></About>
-        <Services></Services>
-        <Brands></Brands>
+        <Hero fontsReady={fontsReady}></Hero>
+        <About fontsReady={fontsReady}></About>
+        <Services fontsReady={fontsReady}></Services>
+        <Brands fontsReady={fontsReady}></Brands>
       </main>
       <footer>
-        <Footer></Footer>
+        <Footer fontsReady={fontsReady}></Footer>
       </footer>
     </>
   )

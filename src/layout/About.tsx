@@ -10,10 +10,12 @@ import PrimaryButton from "../components/PrimaryButton";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
-
+interface aboutProps {
+    fontsReady: boolean
+}
 // TODO: Make desktop version
 
-const About = (): JSX.Element => {
+const About = ({fontsReady}: aboutProps): JSX.Element => {
     const iconRef = useRef<HTMLElement>(null);
     const logoRef = useRef<HTMLImageElement>(null);
     const backgroundRef = useRef<HTMLDivElement>(null);
@@ -24,6 +26,8 @@ const About = (): JSX.Element => {
     const buttonRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
+        if (!fontsReady) return;
+
         gsap.set(logoRef.current, { opacity: 0});
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
@@ -164,7 +168,7 @@ const About = (): JSX.Element => {
             clearTimeout(timeoutId);
         };
 
-    }, []);
+    }, {dependencies: [fontsReady]});
 
     return (
         <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-45">

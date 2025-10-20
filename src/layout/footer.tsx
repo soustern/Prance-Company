@@ -4,7 +4,11 @@ import { motion } from "motion/react"
 
 // TODO: Add scrolltrigger animations
 
-const Footer = (): JSX.Element => {
+interface footerProps {
+    fontsReady: boolean
+}
+
+const Footer = ({fontsReady}: footerProps): JSX.Element => {
     return (
         <section id="footer-section" className="flex flex-col justify-center relative px-4 py-8 bg-[var(--color-bg-primary)]">
             <div className="flex flex-col items-center gap-4">

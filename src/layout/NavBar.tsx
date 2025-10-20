@@ -21,7 +21,7 @@ const NavBar = (): JSX.Element => {
             <nav className="bg-[var(--color-bg-primary)] px-2 pointer-events-auto">
                 <div className="flex items-center justify-between">
                     <div id="logo">
-                        <img loading="lazy" src={logo} className="max-w-[120px]" alt="" />
+                        <img src={logo} className="max-w-[120px]" alt="" />
                     </div>
                     <div id="hamburger">
                         <motion.button aria-expanded={isOpen} aria-controls="menu" whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
