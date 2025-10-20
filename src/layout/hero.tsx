@@ -1,15 +1,59 @@
-import type { JSX } from "react"
+import { useRef, type JSX } from "react"
 import { useWindowSize } from "../hooks/useWindowSize"
 import SecondaryButton from "../components/SecondaryButton";
 import heroMobile from "../assets/heroMobile.webp";
 import heroDesktop from "../assets/heroDesktop.webp";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 // TODO: Make this responsive in web version
 // TODO: Make web version
 
+gsap.registerPlugin(SplitText)
+
 const Hero = (): JSX.Element => {
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    const paragraphRef = useRef<HTMLParagraphElement>(null);
+    const buttonRef = useRef<HTMLDivElement>(null);
 
     const size = useWindowSize();
+
+    useGSAP(() => {
+        const splitHeading = new SplitText(headingRef.current, {type: "lines"});
+
+        gsap.from(splitHeading.lines, {
+            y: 100,
+            opacity: 0,
+            stagger: 0.05,
+            ease: "power4.out",
+            willChange: "transform, opacity",
+            delay: 2.6,
+            duration: 1,
+            });
+
+        gsap.from(paragraphRef.current, {
+            opacity: 0,
+            ease: "power4.out",
+            willChange: "transform, opacity",
+            delay: 2.9,
+            duration: 1,
+            scale: 0.8,
+            });
+
+        gsap.from(buttonRef.current, {
+            y: 20,
+            opacity: 0,
+            ease: "power4.out",
+            willChange: "transform, opacity",
+            delay: 3.2,
+            duration: 1,
+            });
+
+        return () => {
+            splitHeading.revert();
+        };
+    }, []);
 
     return (
         <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-amber-300 px-4 pt-40">
@@ -18,9 +62,9 @@ const Hero = (): JSX.Element => {
                 <div className="absolute z-0 inset-0 bg-[var(--color-bg-primary)]/78 backdrop-blur-sm mix-blend-multiply"></div>
                 <div className="absolute inset-0 z-0 bg-gradient-to-t from-[var(--color-bg-primary)] from-8% to-transparent to-50%"></div>
             </div>
-            <h1 className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
-            <p className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
-            <div className="relatice z-10">
+            <h1 ref={headingRef} className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
+            <p ref={paragraphRef} className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
+            <div ref={buttonRef} className="relatice z-10">
                 <SecondaryButton func={() => document.getElementById(`about-section`)?.scrollIntoView({behavior: 'smooth'})} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-[var(--color-bg-primary)]" text="Explore as possibilidades"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
             </div>
         </section>  
