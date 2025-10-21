@@ -30,6 +30,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     useGSAP(() => {
         if (!fontsReady) return;
 
+        const refs = [servicesHeading, servicesParagraph, servicesSecondHeading, servicesSecondParagraph, sectionRef, firstCardRef, secondCardRef, thirdCardRef, imageRef, imageBlurRef];
+        if (refs.some(ref => !ref.current)) return;
+
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
 
@@ -95,9 +98,10 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             ease: "power4.out",
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "80% center",
-                end: "85% center",
+                start: "65% center",
+                end: "75% center",
                 scrub: 1,
+                markers: true
             }
         });
 
@@ -108,8 +112,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             willChange: "transform",
             scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "80% center",
-                end: "85% center",
+                start: "65% center",
+                end: "75% center",
                 scrub: 1,
             }
         });
@@ -121,10 +125,11 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             ease: "power4.out",
             willChange: "transform, opacity",
             scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "87% center",
-                end: "91% center",
+                trigger: imageRef.current,
+                start: "top center",
+                end: "center center",
                 scrub: 1,
+                markers: true
             }
         })
 
@@ -135,10 +140,11 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             willChange: "transform, opacity",
             ease: "power4.out",
             scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "92% center",
-                end: "95% center",
+                trigger: imageRef.current,
+                start: "center center",
+                end: "bottom center",
                 scrub: 1,
+                markers: true
             }
         })
 

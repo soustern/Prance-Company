@@ -28,6 +28,9 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     useGSAP(() => {
         if (!fontsReady) return;
 
+        const refs = [iconRef, logoRef, backgroundRef, imageRef, imageBlurRef, aboutHeading, aboutParagraph, buttonRef];
+        if (refs.some(ref => !ref.current)) return;
+
         gsap.set(logoRef.current, { opacity: 0});
         gsap.set(imageRef.current, { scale: 0.8, force3D: true });
         gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
@@ -159,12 +162,15 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
             ScrollTrigger.refresh();
         }, 100);
 
+        const handleLoad = () => ScrollTrigger.refresh();
+        document.addEventListener("load", handleLoad);
+
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
             split.revert();
 
-            window.removeEventListener("load", () => ScrollTrigger.refresh());
+            document.removeEventListener("load", handleLoad);
             clearTimeout(timeoutId);
         };
 

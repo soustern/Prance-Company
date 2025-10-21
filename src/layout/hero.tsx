@@ -21,6 +21,9 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     useGSAP(() => {
         if (!fontsReady) return;
 
+        const refs = [headingRef, paragraphRef, buttonRef];
+        if (refs.some(ref => !ref.current)) return;
+
         const splitHeading = new SplitText(headingRef.current, {type: "lines"});
 
         gsap.from(splitHeading.lines, {

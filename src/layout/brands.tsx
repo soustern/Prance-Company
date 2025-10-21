@@ -20,6 +20,9 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     useGSAP(() => {
         if (!fontsReady) return;
 
+        const refs = [brandsHeading, marqueeRef];
+        if (refs.some(ref => !ref.current)) return;
+
         const marquee = marqueeRef.current;
         if (!marquee) return;
         
@@ -31,16 +34,8 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
 
         
         const allImages = marquee.querySelectorAll("img");
-        let marqueeWidth = 0;
-
         gsap.set(allImages, {x: 0});
-
         const tl = gsap.timeline({repeat: -1});
-        tl.to(allImages, {
-            x: -marqueeWidth,
-            duration: 30,
-            ease: "none",
-        });
 
         const imagePromises = [...allImages].map(img => 
             new Promise(resolve => {
@@ -53,8 +48,12 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
         );
 
         Promise.all(imagePromises).then(() => {
-            marqueeWidth = marquee.scrollWidth / 2;
-            tl.play();
+            const marqueeWidth = marquee.scrollWidth / 2;
+            tl.to(allImages, {
+                x: -marqueeWidth,
+                duration: 30,
+                ease: "none",
+            });
         });
 
     }, {dependencies: [fontsReady]});
