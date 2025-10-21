@@ -14,6 +14,7 @@ interface heroProps {
 }
 
 // TODO: Time the animations here better
+// Trigger commit
 const Hero = ({fontsReady}: heroProps): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);
