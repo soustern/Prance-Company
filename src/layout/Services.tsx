@@ -6,6 +6,9 @@ import { SplitText } from "gsap/SplitText";
 import Card from "../components/Card";
 import servicesOwner from "../assets/servicesOwner.webp";
 import servicesBackground from "../assets/servicesBackground.webp";
+import card1 from "../assets/card1.webp";
+import card2 from "../assets/card2.webp";
+import card3 from "../assets/card3.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -179,9 +182,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             </div>
             <div className="relative cards flex flex-col mb-20 z-10">
                 <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
-                    <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." icon="pen-nib"></Card>
-                    <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." icon="photo-film"></Card>
-                    <Card ref={thirdCardRef} className="z-30 card absolute top-110 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." icon="rocket"></Card>
+                    <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                    <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                    <Card ref={thirdCardRef} className="z-30 card absolute top-110 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                 </div>
             </div>
             <div className="relative z-10 h-[220px]"></div>
