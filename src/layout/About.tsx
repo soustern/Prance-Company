@@ -1,4 +1,4 @@
-import {  useRef, useState, type JSX } from "react"
+import {  useRef, type JSX } from "react"
 import about from "../assets/about.webp";
 import { useGSAP } from "@gsap/react";
 import logoAbout from "../assets/logoAbout.webp";
@@ -193,7 +193,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     }, {dependencies: [fontsReady]});
 
     return (
-        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-45">
+        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-15">
             <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0">
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>

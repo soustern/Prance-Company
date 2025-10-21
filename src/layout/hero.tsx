@@ -3,6 +3,7 @@ import SecondaryButton from "../components/SecondaryButton";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import  heroMobile  from "../assets/heroMobile.webp";
 
 // TODO: Make this responsive in web version
 // TODO: Make web version
@@ -76,6 +77,10 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
 
     return (
         <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-4 pt-40">
+            <div className="absolute inset-0">
+                <img src={heroMobile} alt="" />
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/60 bg-blend-hard-light"></div>
+            </div>
             <h1 ref={headingRef} className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
             <p ref={paragraphRef} className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
             <div ref={buttonRef} className="relatice z-10">
