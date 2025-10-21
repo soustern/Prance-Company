@@ -1,11 +1,13 @@
 import {  useRef, type JSX } from "react"
 import about from "../assets/about.webp";
 import { useGSAP } from "@gsap/react";
-import logoAbout from "../assets/logoAbout.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import PrimaryButton from "../components/PrimaryButton";
+import aboutUiElement from "../assets/aboutUiElement.svg";
+import logoAbout from "../assets/logoAbout.webp";
+
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -195,18 +197,10 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
 
     return (
         <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-15">
-            <div className="absolute flex left-1/2 -top-10 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0">
-                <div className="bg-slate-200 z-10 h-10 w-10 relative transform translate-x-1.5">
-                    <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-br-full absolute inset-0"></div>
-                </div>
-                <div className="bg-slate-200 z-30 h-10 w-13 rounded-t-full relative">
-                    <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
-                </div>
-                <div className="bg-slate-200 z-10 h-10 w-10 relative transform -translate-x-1.5">
-                    <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-bl-full absolute inset-0 "></div>
-                </div>
-                <div style={{clipPath: 'polygon(4% 100%, 28% 50%, 60% 50%, 100% 100%, 99% 1%, 0% 0%, 0% 100%)'}} className="bg-[var(--color-bg-primary)] z-20 h-10 w-35 absolute inset-0"></div>
+            <div className="absolute flex left-1/2 -top-16 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0 ">
+                <img src={aboutUiElement} alt="" className="w-22" />
+                <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
+                <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
             </div>
             <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-t-4xl"></div>
             <div className="relative z-10 pb-8">

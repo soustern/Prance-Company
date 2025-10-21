@@ -44,15 +44,15 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 ease: "power4.out",
                 willChange: "transform, opacity",
                 delay: 2.6,
-                duration: 1,
+                duration: 0.5,
                 });
 
             gsap.from(paragraphRef.current, {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.9,
-                duration: 1,
+                delay: 2.8,
+                duration: 0.5,
                 scale: 0.8,
                 });
 
@@ -61,8 +61,8 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 3.2,
-                duration: 1,
+                delay: 3.1,
+                duration: 0.5,
                 });
         }
 
@@ -84,7 +84,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
             <h1 ref={headingRef} className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
             <p ref={paragraphRef} className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
             <div ref={buttonRef} className="relatice z-10">
-                <SecondaryButton func={() => document.getElementById(`about-section`)?.scrollIntoView({behavior: 'smooth'})} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-[var(--color-bg-primary)]" text="Explore as possibilidades"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
+                <SecondaryButton func={() => document.getElementById(`about-section`)?.scrollIntoView({behavior: 'smooth'})} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Explore as possibilidades"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
             </div>
         </section>  
     )
