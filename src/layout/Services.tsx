@@ -106,7 +106,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     start: "65% center",
                     end: "75% center",
                     scrub: 1,
-                    markers: true
                 }
             });
 
@@ -134,7 +133,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     start: "top center",
                     end: "center center",
                     scrub: 1,
-                    markers: true
                 }
             })
 
@@ -149,7 +147,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     start: "center center",
                     end: "bottom center",
                     scrub: 1,
-                    markers: true
                 }
             })
         }

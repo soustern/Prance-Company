@@ -14,6 +14,8 @@ interface aboutProps {
     fontsReady: boolean
 }
 // TODO: Make desktop version
+// TODO: Discover why animation is not playing in production
+
 
 const About = ({fontsReady}: aboutProps): JSX.Element => {
     const iconRef = useRef<HTMLElement>(null);
@@ -25,19 +27,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     const aboutParagraph = useRef<HTMLParagraphElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
 
-    const [imagesLoaded, setImagesLoaded] = useState(false);
-    const imagesLoadedAmount = useRef(0);
-    
-    const handleLoad = () => {
-        imagesLoadedAmount.current += 1;
-        if (imagesLoadedAmount.current === 3)
-        {
-            setImagesLoaded(true);
-        }
-    }
-
     useGSAP(() => {
-        if (!imagesLoaded || !fontsReady) return;
+        if (!fontsReady) return;
 
         const refs = [iconRef, logoRef, backgroundRef, imageRef, imageBlurRef, aboutHeading, aboutParagraph, buttonRef];
         if (refs.some(ref => !ref.current)) return;
@@ -50,7 +41,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
         
         const initAnimation = () => {
             if (isInitialized) return;
-            isInitialized = false;
+            isInitialized = true;
 
             gsap.set(logoRef.current, { opacity: 0});
             gsap.set(imageRef.current, { scale: 0.8, force3D: true });
@@ -209,7 +200,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 </div>
                 <div className="bg-slate-200 z-30 h-10 w-13 rounded-t-full relative">
                     <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    <img onLoad={handleLoad} loading="lazy" ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
+                    <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
                 </div>
                 <div className="bg-slate-200 z-10 h-10 w-10 relative transform -translate-x-1.5">
                     <div className="bg-[var(--color-bg-primary)] h-full w-full rounded-bl-full absolute inset-0 "></div>
@@ -218,8 +209,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
             </div>
             <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-4xl"></div>
             <div className="relative z-10 pb-8">
-                <img loading="lazy" onLoad={handleLoad} src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
-                <img loading="lazy" onLoad={handleLoad} src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
+                <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
+                <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
             <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 text-center font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
