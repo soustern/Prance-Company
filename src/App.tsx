@@ -32,7 +32,7 @@ function App() {
         <Services fontsReady={fontsReady}></Services>
         <Brands fontsReady={fontsReady}></Brands>
       </main>
-      <footer>
+      <footer className='font-sans'>
         <Footer ></Footer>
       </footer>
     </>
