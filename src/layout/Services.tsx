@@ -27,136 +27,134 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     const imageRef = useRef<HTMLImageElement>(null);
     const imageBlurRef = useRef<HTMLImageElement>(null);
 
-    const [imagesLoaded, setImagesLoaded] = useState(false);
-    const imagesLoadedAmount = useRef(0);
-    const handleLoad = () => {
-        imagesLoadedAmount.current += 1;
-        if (imagesLoadedAmount.current === 2)
-        {
-            setImagesLoaded(true);
-        }
-    }
-
     useGSAP(() => {
         if (!fontsReady) return;
 
         const refs = [servicesHeading, servicesParagraph, servicesSecondHeading, servicesSecondParagraph, sectionRef, firstCardRef, secondCardRef, thirdCardRef, imageRef, imageBlurRef];
         if (refs.some(ref => !ref.current)) return;
 
-        gsap.set(imageRef.current, { scale: 0.8, force3D: true });
-        gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
-
         const split = new SplitText(servicesHeading.current, {type: "lines"});
 
-        gsap.from(split.lines, {
-            y: 100,
-            opacity: 0,
-            stagger: 0.05,
-            ease: "power4.out",
-            force3D: true,
-            duration: 0.2,
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top bottom",
-                end: "top center",
-                scrub: 1,
-            }
-        });
+        let isInitialized = false;
 
-        // TODO: Make the timing of this animation better
-        gsap.from(servicesParagraph.current, {
-            opacity: 0,
-            duration: 0.5,
-            scale: 0.8,
-            ease: "power4.out",
-            delay: 0.2,
-            scrollTrigger: {
-                trigger: servicesHeading.current,
-                start: "top 80%",
-                end: "top 40%",
-                scrub: 1,
-            }
-        })
+        const initAnimations = () => {
+            if (isInitialized) return;
+            isInitialized = true;
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".card-wrapper",
-                start: "-=100px top",
-                end: "bottom center",
-                scrub: 1,
-                pin: true,
-            }
-        });
+            gsap.set(imageRef.current, { scale: 0.8, force3D: true });
+            gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
 
-        tl.to(secondCardRef.current, {
-            willChange: "transform, opacity",
-            top: 20,
-            duration: 0.2,
-            opacity: 1
-        }).to(thirdCardRef.current, {
-            willChange: "transform, opacity",
-            top: 40,
-            duration: 0.2,
-            opacity: 1
-        })
+            gsap.from(split.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top bottom",
+                    end: "top center",
+                    scrub: 1,
+                }
+            });
 
-        gsap.to(imageBlurRef.current, {
-            scaleX: 1, 
-            opacity: 0, 
-            stagger: 0.05,
-            willChange: "transform, opacity",
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "65% center",
-                end: "75% center",
-                scrub: 1,
-                markers: true
-            }
-        });
+            gsap.from(servicesParagraph.current, {
+                opacity: 0,
+                duration: 0.5,
+                scale: 0.8,
+                ease: "power4.out",
+                delay: 0.2,
+                scrollTrigger: {
+                    trigger: servicesHeading.current,
+                    start: "top 80%",
+                    end: "top 40%",
+                    scrub: 1,
+                }
+            })
 
-        gsap.to(imageRef.current, {
-            scale: 1,
-            stagger: 0.05,
-            ease: "power4.out",
-            willChange: "transform",
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "65% center",
-                end: "75% center",
-                scrub: 1,
-            }
-        });
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".card-wrapper",
+                    start: "-=100px top",
+                    end: "bottom center",
+                    scrub: 1,
+                    pin: true,
+                }
+            });
 
-         gsap.from(servicesSecondHeading.current, {
-            y: 100,
-            opacity: 0,
-            stagger: 0.05,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            scrollTrigger: {
-                trigger: imageRef.current,
-                start: "top center",
-                end: "center center",
-                scrub: 1,
-                markers: true
-            }
-        })
+            tl.to(secondCardRef.current, {
+                willChange: "transform, opacity",
+                top: 20,
+                duration: 0.2,
+                opacity: 1
+            }).to(thirdCardRef.current, {
+                willChange: "transform, opacity",
+                top: 40,
+                duration: 0.2,
+                opacity: 1
+            })
 
-        gsap.from(servicesSecondParagraph.current, {
-            opacity: 0,
-            stagger: 0.05,
-            scale: 0.8,
-            willChange: "transform, opacity",
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: imageRef.current,
-                start: "center center",
-                end: "bottom center",
-                scrub: 1,
-                markers: true
-            }
-        })
+            gsap.to(imageBlurRef.current, {
+                scaleX: 1, 
+                opacity: 0, 
+                stagger: 0.05,
+                willChange: "transform, opacity",
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "65% center",
+                    end: "75% center",
+                    scrub: 1,
+                    markers: true
+                }
+            });
+
+            gsap.to(imageRef.current, {
+                scale: 1,
+                stagger: 0.05,
+                ease: "power4.out",
+                willChange: "transform",
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "65% center",
+                    end: "75% center",
+                    scrub: 1,
+                }
+            });
+
+            gsap.from(servicesSecondHeading.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                scrollTrigger: {
+                    trigger: imageRef.current,
+                    start: "top center",
+                    end: "center center",
+                    scrub: 1,
+                    markers: true
+                }
+            })
+
+            gsap.from(servicesSecondParagraph.current, {
+                opacity: 0,
+                stagger: 0.05,
+                scale: 0.8,
+                willChange: "transform, opacity",
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: imageRef.current,
+                    start: "center center",
+                    end: "bottom center",
+                    scrub: 1,
+                    markers: true
+                }
+            })
+        }
+
+        const initTimeout = setTimeout(initAnimations, 50);
 
         const onLoad = () => {
             ScrollTrigger.refresh();
@@ -165,8 +163,11 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
         window.addEventListener("load", onLoad);
 
         return () => {
+            clearTimeout(initTimeout);
+            isInitialized = false;
+
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
-            split?.revert();
+            split.revert();
 
             window.removeEventListener("load", onLoad);
         };
@@ -186,8 +187,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             </div>
             <div className="relative z-10 h-[220px]"></div>
             <div className="relative z-10 pb-8 flex items-center">
-                <img onLoad={handleLoad} src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
-                <img onLoad={handleLoad} src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
+                <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
+                <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
             <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform] text-center font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>

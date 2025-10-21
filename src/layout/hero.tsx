@@ -15,6 +15,7 @@ interface heroProps {
 
 // TODO: Time the animations here better
 // Trigger commit
+
 const Hero = ({fontsReady}: heroProps): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);
@@ -28,35 +29,47 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
 
         const splitHeading = new SplitText(headingRef.current, {type: "lines"});
 
-        gsap.from(splitHeading.lines, {
-            y: 100,
-            opacity: 0,
-            stagger: 0.05,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            delay: 2.6,
-            duration: 1,
-            });
+        let isInitialized = false;
 
-        gsap.from(paragraphRef.current, {
-            opacity: 0,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            delay: 2.9,
-            duration: 1,
-            scale: 0.8,
-            });
+        const initAnimations = () => {
+            if (isInitialized) return;
+            isInitialized = true;
 
-        gsap.from(buttonRef.current, {
-            y: 20,
-            opacity: 0,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            delay: 3.2,
-            duration: 1,
-            });
+
+            gsap.from(splitHeading.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                delay: 2.6,
+                duration: 1,
+                });
+
+            gsap.from(paragraphRef.current, {
+                opacity: 0,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                delay: 2.9,
+                duration: 1,
+                scale: 0.8,
+                });
+
+            gsap.from(buttonRef.current, {
+                y: 20,
+                opacity: 0,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                delay: 3.2,
+                duration: 1,
+                });
+        }
+
+        const initTimeout = setTimeout(initAnimations, 50);
 
         return () => {
+            clearTimeout(initTimeout);
+            isInitialized = false;
             splitHeading.revert();
         };
     }, {dependencies: [fontsReady]});

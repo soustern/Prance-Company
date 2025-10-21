@@ -42,122 +42,133 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
         const refs = [iconRef, logoRef, backgroundRef, imageRef, imageBlurRef, aboutHeading, aboutParagraph, buttonRef];
         if (refs.some(ref => !ref.current)) return;
 
-        gsap.set(logoRef.current, { opacity: 0});
-        gsap.set(imageRef.current, { scale: 0.8, force3D: true });
-        gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
-
-        gsap.to(iconRef.current, {opacity: 0, 
-            duration: 0.5, 
-            ease: "power4.out", 
-            willChange: "opacity",
-            scrollTrigger: {
-                trigger: iconRef.current,
-                start: "top center",
-                end: "+=100 center",
-                scrub: 1,
-            }
-        });
-
-        gsap.to(logoRef.current, {opacity: 1, 
-            duration: 0.5,
-            ease: "power4.out", 
-            willChange: "opacity",
-            scrollTrigger: {
-                trigger: iconRef.current,
-                start: "+=50 center",
-                end: "bottom center",
-                scrub: 1,
-            }
-        });
-
-        gsap.to(backgroundRef.current, {
-            scaleX: 1, 
-            borderRadius: 0, 
-            duration: 0.5,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            scrollTrigger: {
-                trigger: iconRef.current,
-                start: "center center",
-                end: "+=100 center",
-                scrub: 1,
-            }
-        });
-
-        gsap.to(imageBlurRef.current, {
-            scaleX: 1, 
-            opacity: 0, 
-            duration: 0.5,
-            willChange: "transform, opacity",
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: iconRef.current,
-                start: "center center",
-                end: "+=100 center",
-                scrub: 1,
-            }
-        });
-
-        gsap.to(imageRef.current, {
-            scale: 1, 
-            duration: 0.5, 
-            ease: "power4.out",
-            willChange: "transform",
-            scrollTrigger: {
-                trigger: iconRef.current,
-                start: "center center",
-                end: "+=100 center",
-                scrub: 1,                
-            }
-        });
-
         const split = SplitText.create(aboutHeading.current, {
             type: "lines"
         });
 
-        gsap.from(split.lines, {
-            y: 100,
-            opacity: 0,
-            stagger: 0.05,
-            ease: "power4.out",
-            willChange: "transform, opacity",
-            duration: 0.2,
-            scrollTrigger: {
-                trigger: imageRef.current,
-                start: "top center",
-                end: "center center",
-                scrub: 1,
-            }
-        })
+        let isInitialized = false;
+        
+        const initAnimation = () => {
+            if (isInitialized) return;
+            isInitialized = false;
 
-        gsap.from(aboutParagraph.current, {
-            opacity: 0,
-            duration: 0.5,
-            scale: 0.8,
-            willChange: "transform, opacity",
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: imageRef.current,
-                start: "center center",
-                end: "bottom center",
-                scrub: 1,
-            }
-        })
+            gsap.set(logoRef.current, { opacity: 0});
+            gsap.set(imageRef.current, { scale: 0.8, force3D: true });
+            gsap.set(imageBlurRef.current, { scale: 0.8, force3D: true });
 
-        gsap.from(buttonRef.current, {
-            y: 100,
-            opacity: 0,
-            stagger: 0.05,
-            ease: "power4.out",
-            duration: 0.2,
-            willChange: "transform, opacity",
-            scrollTrigger: {
-                trigger: aboutParagraph.current,
-                start: "center bottom",
-                end: "+=400 bottom",
-                scrub: 1,
-            }
-        })
+            gsap.to(iconRef.current, {opacity: 0, 
+                duration: 0.5, 
+                ease: "power4.out", 
+                willChange: "opacity",
+                scrollTrigger: {
+                    trigger: iconRef.current,
+                    start: "top center",
+                    end: "+=100 center",
+                    scrub: 1,
+                }
+            });
+
+            gsap.to(logoRef.current, {opacity: 1, 
+                duration: 0.5,
+                ease: "power4.out", 
+                willChange: "opacity",
+                scrollTrigger: {
+                    trigger: iconRef.current,
+                    start: "+=50 center",
+                    end: "bottom center",
+                    scrub: 1,
+                }
+            });
+
+            gsap.to(backgroundRef.current, {
+                scaleX: 1, 
+                borderRadius: 0, 
+                duration: 0.5,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                scrollTrigger: {
+                    trigger: iconRef.current,
+                    start: "center center",
+                    end: "+=100 center",
+                    scrub: 1,
+                }
+            });
+
+            gsap.to(imageBlurRef.current, {
+                scaleX: 1, 
+                opacity: 0, 
+                duration: 0.5,
+                willChange: "transform, opacity",
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: iconRef.current,
+                    start: "center center",
+                    end: "+=100 center",
+                    scrub: 1,
+                }
+            });
+
+            gsap.to(imageRef.current, {
+                scale: 1, 
+                duration: 0.5, 
+                ease: "power4.out",
+                willChange: "transform",
+                scrollTrigger: {
+                    trigger: iconRef.current,
+                    start: "center center",
+                    end: "+=100 center",
+                    scrub: 1,                
+                }
+            });
+
+            
+
+            gsap.from(split.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                willChange: "transform, opacity",
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: imageRef.current,
+                    start: "top center",
+                    end: "center center",
+                    scrub: 1,
+                }
+            })
+
+            gsap.from(aboutParagraph.current, {
+                opacity: 0,
+                duration: 0.5,
+                scale: 0.8,
+                willChange: "transform, opacity",
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: imageRef.current,
+                    start: "center center",
+                    end: "bottom center",
+                    scrub: 1,
+                }
+            })
+
+            gsap.from(buttonRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                duration: 0.2,
+                willChange: "transform, opacity",
+                scrollTrigger: {
+                    trigger: aboutParagraph.current,
+                    start: "center bottom",
+                    end: "+=400 bottom",
+                    scrub: 1,
+                }
+            })
+        }
+
+        const initTimeout = setTimeout(initAnimation, 50);
 
        if (document.readyState === "complete")
         {
@@ -178,11 +189,14 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
 
 
         return () => {
+            clearTimeout(timeoutId);
+            clearTimeout(initTimeout);
+
+            isInitialized = false;
+            
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
             split.revert();
-
             document.removeEventListener("load", handleLoad);
-            clearTimeout(timeoutId);
         };
 
     }, {dependencies: [fontsReady]});
