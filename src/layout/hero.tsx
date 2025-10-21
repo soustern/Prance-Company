@@ -13,6 +13,7 @@ interface heroProps {
     fontsReady: boolean
 }
 
+// TODO: Time the animations here better
 const Hero = ({fontsReady}: heroProps): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const paragraphRef = useRef<HTMLParagraphElement>(null);

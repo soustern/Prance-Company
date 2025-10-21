@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { useRef, type JSX } from "react"
+import { useRef, useState, type JSX } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -26,6 +26,16 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     const thirdCardRef = useRef<HTMLElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
     const imageBlurRef = useRef<HTMLImageElement>(null);
+
+    const [imagesLoaded, setImagesLoaded] = useState(false);
+    const imagesLoadedAmount = useRef(0);
+    const handleLoad = () => {
+        imagesLoadedAmount.current += 1;
+        if (imagesLoadedAmount.current === 2)
+        {
+            setImagesLoaded(true);
+        }
+    }
 
     useGSAP(() => {
         if (!fontsReady) return;
@@ -163,8 +173,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     }, {scope: sectionRef, dependencies: [fontsReady]});
 
 
-    // TODO: Fix Paragraph and heading srcolltrigger animations timing
-
     return (
     <section id="services-section" ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-4 py-8 bg-slate-800 flex flex-col items-center relative scroll-mt-20">
             <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
@@ -178,8 +186,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             </div>
             <div className="relative z-10 h-[220px]"></div>
             <div className="relative z-10 pb-8 flex items-center">
-                <img loading="lazy" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
-                <img loading="lazy" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
+                <img onLoad={handleLoad} src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
+                <img onLoad={handleLoad} src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
             <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform] text-center font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
