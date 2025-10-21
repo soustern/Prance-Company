@@ -180,7 +180,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
                 <p ref={servicesParagraph} className="[will-change: opacity, transform] font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
             </div>
-            <div className="relative cards flex flex-col mb-20 z-10">
+            <div className="relative cards flex flex-col mb-23 z-10">
                 <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
                     <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
                     <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
@@ -189,8 +189,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             </div>
             <div className="relative z-10 h-[220px]"></div>
             <div className="relative z-10 pb-8 flex items-center">
-                <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
-                <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
+                <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
+                <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <div className="relative">
                 <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>

@@ -204,8 +204,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
             </div>
             <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-t-4xl"></div>
             <div className="relative z-10 pb-8">
-                <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
-                <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
+                <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
+                <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
             <div>
                 <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
