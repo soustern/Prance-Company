@@ -17,11 +17,14 @@ const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, clas
                 <div className="bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary w-full h-full py-6 flex items center justify-center">
                     {icon && <i className={`fa-solid fa-${icon} text-4xl text-accent-secondary`}></i>}
                 </div>
-                <h3 className="text-2xl leading-tight  font-medium text-center text-slate-800">{heading}</h3>
+                <div className="px-8 w-full">
+                    <h3 className="text-2xl leading-tight  font-medium text-slate-800">{heading}</h3>
+                </div>
             </div> 
             <div className="px-8">
-                <p className="text-slate-700 text-center font-light pb-8">{paragraph}</p>
-                <PrimaryButton link="https://wa.link/173tl9" className="pointer-events-auto relative z-50" text="Saiba Mais"></PrimaryButton>
+                <p className="text-slate-700 font-light pb-8">{paragraph}</p>
+                <PrimaryButton link="https://wa.link/173tl9" className="pointer-events-auto relative z-50" text="Saiba Mais">
+                </PrimaryButton>
             </div>
         </article> 
     )

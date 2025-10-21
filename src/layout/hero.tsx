@@ -61,7 +61,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 3.1,
+                delay: 3.0,
                 duration: 0.5,
                 });
         }
@@ -81,9 +81,9 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 <img src={heroMobile} alt="" />
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/60 bg-blend-hard-light"></div>
             </div>
-            <h1 ref={headingRef} className="relative z-10 text-3xl text-center text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise</span></h1>
-            <p ref={paragraphRef} className="relative z-10 text-lg font-normal text-center text-slate-400 pb-4">Cresça com clareza e impacto.</p>
-            <div ref={buttonRef} className="relatice z-10">
+            <h1 ref={headingRef} className="relative z-10 text-center text-3xl text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise.</span></h1>
+            <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-4 relative z-10">Cresça com clareza e impacto.</p>
+            <div ref={buttonRef} className="relative z-10">
                 <SecondaryButton func={() => document.getElementById(`about-section`)?.scrollIntoView({behavior: 'smooth'})} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Explore as possibilidades"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
             </div>
         </section>  

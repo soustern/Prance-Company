@@ -60,9 +60,9 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
 
     // TODO: Create ScrollTrigger Animations
     return (
-        <section id="brands-section" className="bg-slate-200 flex flex-col items-center justify-center relative px-4 py-8 rounded-4xl">
+        <section id="brands-section" className="bg-slate-200 flex flex-col items-center justify-center relative px-8 py-8 rounded-4xl">
             <h2 ref={brandsHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-12 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance:</h2>
-            <div className="w-[110%] overflow-x-hidden relative pb-12">
+            <div className="w-[120%] overflow-x-hidden relative pb-12">
                 <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
                     <img loading="lazy" src={brand1} alt="" />
                     <img loading="lazy" src={brand2} alt="" />

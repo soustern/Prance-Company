@@ -196,8 +196,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     }, {dependencies: [fontsReady]});
 
     return (
-        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-4 py-8 scroll-mt-15">
-            <div className="absolute flex left-1/2 -top-16 transform -translate-x-1/2 translate-y-[1px] z-0 gap-0 ">
+        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-8 py-8 scroll-mt-15">
+            <div className="absolute flex left-1/2 -top-16 transform -translate-x-1/2 translate-y-[1px] z-10 gap-0 ">
                 <img src={aboutUiElement} alt="" className="w-22" />
                 <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
                 <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
@@ -207,8 +207,10 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
                 <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
-            <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-center text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
-            <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 text-center font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
+            <div>
+                <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-[var(--color-bg-primary)] font-medium text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
+                <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 font-light text-[var(--color-bg-primary)] pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
+            </div>
             <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonRef}>
                 <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
             </div>

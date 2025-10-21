@@ -32,7 +32,7 @@ const NavBar = (): JSX.Element => {
                     </div>
                 </div>
                 <AnimatePresence mode="wait">{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "auto"}} transition={{duration: 0.2, ease: "easeOut"}} className=" w-full overflow-hidden will-change-transform" exit={{height: 0}} style={{contain: 'layout style paint'}}>
-                    <div className={`px-4 pt-8 pb-30 h-screen overflow-y-auto  ${isOpen ? `pointer-events-auto` : `pointer-events-none`}`}>
+                    <div className={`px-8 pt-8 pb-30 h-screen overflow-y-auto  ${isOpen ? `pointer-events-auto` : `pointer-events-none`}`}>
                         <ul className="w-full flex flex-col items-start gap-8">
                             {
                                 navOptions.map((option, index) => {

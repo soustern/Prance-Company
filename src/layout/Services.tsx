@@ -172,10 +172,12 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
 
 
     return (
-    <section id="services-section" ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(15, 23, 43, 0.9), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-4 py-8  flex flex-col items-center relative scroll-mt-20">
-            <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
-            <p ref={servicesParagraph} className="[will-change: opacity, transform] text-center font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
-            <div className="relative cards flex flex-col mb-8 z-10">
+    <section id="services-section" ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-8 py-8  flex flex-col items-center relative scroll-mt-20">
+            <div>
+                <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
+                <p ref={servicesParagraph} className="[will-change: opacity, transform] font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
+            </div>
+            <div className="relative cards flex flex-col mb-20 z-10">
                 <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
                     <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." icon="pen-nib"></Card>
                     <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." icon="photo-film"></Card>
@@ -187,10 +189,13 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
                 <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />
             </div>
-            <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium text-center text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
-            <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform] text-center font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
-            Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
-            Fundou a Prance Company para transformar marcas em referências no mercado.</p>
+            <div className="relative">
+                <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
+                <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform]  font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
+                Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
+                Fundou a Prance Company para transformar marcas em referências no mercado.</p>
+                <div className="absolute inset-0 z-0 w-[110%] h-[110%] bg-[radial-gradient(circle_300px_at_center,rgba(15,23,43,1),transparent)]"></div>
+            </div>
         </section>
     )
 }
