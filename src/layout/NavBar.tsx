@@ -18,7 +18,7 @@ const NavBar = (): JSX.Element => {
     {
         return (
             
-            <nav className="bg-[var(--color-bg-primary)] px-2 pointer-events-auto">
+            <nav className="bg-[var(--color-bg-primary)]/60 backdrop-blur-3xl px-2 pointer-events-auto">
                 <div className="flex items-center justify-between">
                     <div id="logo">
                         <img src={logo} className="max-w-[120px]" alt="" />
@@ -31,8 +31,8 @@ const NavBar = (): JSX.Element => {
                         </motion.button>
                     </div>
                 </div>
-                <AnimatePresence mode="wait">{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "auto"}} transition={{duration: 0.2, ease: "easeOut"}} className="bg-[var(--color-bg-primary)] w-full overflow-hidden will-change-transform" exit={{height: 0}} style={{contain: 'layout style paint'}}>
-                    <div className={`px-4 pt-8 pb-30 h-screen overflow-y-auto ${isOpen ? `pointer-events-auto` : `pointer-events-none`}`}>
+                <AnimatePresence mode="wait">{isOpen && <motion.div id="menu" initial={{height: 0}} animate={{height: "auto"}} transition={{duration: 0.2, ease: "easeOut"}} className=" w-full overflow-hidden will-change-transform" exit={{height: 0}} style={{contain: 'layout style paint'}}>
+                    <div className={`px-4 pt-8 pb-30 h-screen overflow-y-auto  ${isOpen ? `pointer-events-auto` : `pointer-events-none`}`}>
                         <ul className="w-full flex flex-col items-start gap-8">
                             {
                                 navOptions.map((option, index) => {

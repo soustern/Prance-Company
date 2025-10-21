@@ -73,7 +73,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
 
             gsap.to(backgroundRef.current, {
                 scaleX: 1, 
-                borderRadius: 0, 
+                borderTopLeftRadius: 24, 
+                borderTopRightRadius: 24, 
                 duration: 0.5,
                 ease: "power4.out",
                 willChange: "transform, opacity",
@@ -207,7 +208,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 </div>
                 <div style={{clipPath: 'polygon(4% 100%, 28% 50%, 60% 50%, 100% 100%, 99% 1%, 0% 0%, 0% 100%)'}} className="bg-[var(--color-bg-primary)] z-20 h-10 w-35 absolute inset-0"></div>
             </div>
-            <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-4xl"></div>
+            <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-t-4xl"></div>
             <div className="relative z-10 pb-8">
                 <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[280px] relative z-10" alt="" />
                 <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[280px] absolute inset-0 z-10 blur-xs" alt="" />

@@ -10,7 +10,7 @@ import { motion } from "motion/react"
 
 const Footer = (): JSX.Element => {
     return (
-        <section id="footer-section" className="flex flex-col justify-center relative px-4 py-8 bg-[var(--color-bg-primary)]">
+        <section id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center relative px-4 py-8 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-22">
             <div className="flex flex-col items-center gap-4">
                 <div className="flex flex-col gap-4 pb-4">
                     <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
