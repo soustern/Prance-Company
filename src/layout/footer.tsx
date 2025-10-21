@@ -10,7 +10,7 @@ import { motion } from "motion/react"
 
 const Footer = (): JSX.Element => {
     return (
-        <section id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center relative px-8 py-12 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-26">
+        <section id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center relative px-10 py-16 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-31">
             <div className="flex flex-col gap-4 pb-4">
                 <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
                     <i className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></i>

@@ -76,7 +76,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     }, {dependencies: [fontsReady]});
 
     return (
-        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-8 pt-40">
+        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-10 pt-40">
             <div className="absolute inset-0">
                 <img src={heroMobile} alt="" />
                 <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/60 bg-blend-hard-light"></div>

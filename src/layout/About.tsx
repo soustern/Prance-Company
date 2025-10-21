@@ -196,7 +196,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     }, {dependencies: [fontsReady]});
 
     return (
-        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-8 py-12 scroll-mt-15">
+        <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-10 py-16 scroll-mt-15">
             <div className="absolute flex left-1/2 -top-16 transform -translate-x-1/2 translate-y-[1px] z-10 gap-0 ">
                 <img src={aboutUiElement} alt="" className="w-22" />
                 <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
