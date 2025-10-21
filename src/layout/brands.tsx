@@ -1,4 +1,4 @@
-import { useEffect, useRef, type JSX } from "react"
+import { useRef, type JSX } from "react"
 import brand1 from "../assets/brand1.webp";
 import brand2 from "../assets/brand2.webp";
 import brand3 from "../assets/brand3.webp";

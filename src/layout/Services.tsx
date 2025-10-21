@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { useRef, useState, type JSX } from "react"
+import { useRef, type JSX } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
