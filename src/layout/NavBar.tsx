@@ -10,11 +10,15 @@ const NavBar = (): JSX.Element => {
 
     const navOptions = [["Home", "hero-section"], ["A Prance", "about-section"], ["Serviços", "services-section"], ["Clientes", "brands-section"], ["Contatos", "footer-section"]];
 
+    const variants = {
+        initial: {scaleX: 0},
+        hover: {scaleX: 1}
+    }
+
 
     // TODO: Create desktop version
-    // TODO: Create links
 
-    if (size <= 700)
+    if (size <= 975)
     {
         return (
             
@@ -77,7 +81,28 @@ const NavBar = (): JSX.Element => {
     else
     {
         return (
-            <></>
+            <nav className="bg-[var(--color-bg-primary)]/60 backdrop-blur-3xl px-12 py-3 pointer-events-auto ">
+                <div className="flex items-center justify-between gap-12">
+                    <div id="logo">
+                        <img src={logo} className="max-w-[120px]" alt="" />
+                    </div>
+                    <ul className="flex flex-1 justify-center items-center max-w-[800px]">
+                        {
+                            navOptions.map((option) => {
+                                return (
+                                    <motion.li key={option[0]} whileTap={{scale: 0.9}} whileHover={"hover"} initial={"initial"} className="[flex:1_2_auto] flex flex-col items-center justify-center">
+                                        <a href={`#${option[1]}`} className="flex items-center justify-between p-2">
+                                            <p className="text-slate-300 font-light">{option[0]}</p>
+                                        </a>
+                                        <motion.div variants={variants} transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }} className="bg-accent-secondary h-[1px] origin-center transform w-20 rounded-full"></motion.div>
+                                    </motion.li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar"></PrimaryButton>
+                </div>
+            </nav>
         )
     }
 }
