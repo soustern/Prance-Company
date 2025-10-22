@@ -93,7 +93,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 opacity: 1
             }).to(thirdCardRef.current, {
                 willChange: "transform, opacity",
-                top: 40,
+                top: 42,
                 duration: 0.2,
                 opacity: 1
             })

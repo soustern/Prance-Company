@@ -43,16 +43,16 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.05,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.6,
-                duration: 0.5,
+                delay: 2.5,
+                duration: 0.6,
                 });
 
             gsap.from(paragraphRef.current, {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.8,
-                duration: 0.5,
+                delay: 2.7,
+                duration: 0.6,
                 scale: 0.8,
                 });
 
@@ -61,8 +61,8 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 3.0,
-                duration: 0.5,
+                delay: 2.9,
+                duration: 0.6,
                 });
         }
 
@@ -76,15 +76,17 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     }, {dependencies: [fontsReady]});
 
     return (
-        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-9 pt-40">
+        <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-8 pt-25 pb-20">
             <div className="absolute inset-0">
                 <img src={heroMobile} alt="" />
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/60 bg-blend-hard-light"></div>
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/85 bg-blend-hard-light"></div>
             </div>
-            <h1 ref={headingRef} className="relative z-10 text-center text-3xl text-slate-400 pb-6">Do <span className="text-slate-50 font-medium">conceito</span> ao <span className="text-slate-50 font-medium">lucro</span> <br></br> com <span className="text-slate-50 font-medium">expertise.</span></h1>
-            <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-4 relative z-10">Cresça com clareza e impacto.</p>
-            <div ref={buttonRef} className="relative z-10">
-                <SecondaryButton func={() => document.getElementById(`about-section`)?.scrollIntoView({behavior: 'smooth'})} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Explore as possibilidades"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
+            <div>
+                <h1 ref={headingRef} className="relative z-10 text-3xl text-slate-400 pb-4"><span className="text-slate-50 font-medium">Do conceito ao lucro:</span> expertise que prepara sua marca para voar alto.</h1>
+                <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-8 relative z-10">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
+            </div>
+            <div ref={buttonRef} className="relative z-10 w-full">
+                <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Vamos Conversar"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
             </div>
         </section>  
     )
