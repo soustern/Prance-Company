@@ -33,7 +33,7 @@ function App() {
         <Brands fontsReady={fontsReady}></Brands>
       </main>
       <footer className='font-sans'>
-        <Footer ></Footer>
+        <Footer fontsReady={fontsReady} ></Footer>
       </footer>
     </>
   )
