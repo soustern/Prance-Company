@@ -50,6 +50,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
             gsap.from(splitHeading.lines, {
                 y: 100,
                 opacity: 0,
+                stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
                 delay: 2.5,
@@ -58,6 +59,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
 
             gsap.from(splitParagraph.lines, {
                 y: 100,
+                opacity: 0,
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
@@ -68,6 +70,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
             gsap.from(buttonRef.current, {
                 y: 100,
                 opacity: 0,
+                stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
                 delay: 3.2,
