@@ -7,7 +7,6 @@
   --color-bg-primary: #112648;
   --color-accent-primary: #199a6a;
   --color-accent-secondary: #b78937;
-  --color-text-primary: theme('colors.slate.50');
 }
 
 @theme {
