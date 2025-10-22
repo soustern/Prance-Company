@@ -100,7 +100,7 @@ const NavBar = (): JSX.Element => {
                             })
                         }
                     </ul>
-                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar"></PrimaryButton>
+                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar" className="max-w-[250px]"></PrimaryButton>
                 </div>
             </nav>
         )

@@ -15,3 +15,7 @@
   --color-accent-primary: var(--color-accent-primary);
   --color-accent-secondary: var(--color-accent-secondary);
 }
+
+p {
+  line-height: 1.625;
+}
