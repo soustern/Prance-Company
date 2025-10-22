@@ -156,7 +156,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     <img loading="lazy" src={brand6} alt="" />
                 </div>
             </div>
-            <div ref={buttonRef} className="relative z-10">
+            <div ref={buttonRef} className="relative z-10 w-full">
                 <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
             </div>
         </section>

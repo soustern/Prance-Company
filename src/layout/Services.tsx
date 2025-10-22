@@ -37,6 +37,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
         if (refs.some(ref => !ref.current)) return;
 
         const split = new SplitText(servicesHeading.current, {type: "lines"});
+        const splitParagraph = new SplitText(servicesParagraph.current, {type: "lines"});
+        const secondHeadingSplit = new SplitText(servicesSecondHeading.current, {type: "lines"});
+        const secondParagraphSplit = new SplitText(servicesSecondParagraph.current, {type: "lines"});
 
         let isInitialized = false;
 
@@ -62,12 +65,13 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 }
             });
 
-            gsap.from(servicesParagraph.current, {
+            gsap.from(splitParagraph.lines, {
+                y: 100,
                 opacity: 0,
-                duration: 0.5,
-                scale: 0.8,
+                stagger: 0.05,
                 ease: "power4.out",
-                delay: 0.2,
+                force3D: true,
+                duration: 0.2,
                 scrollTrigger: {
                     trigger: servicesHeading.current,
                     start: "top 80%",
@@ -125,12 +129,13 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 }
             });
 
-            gsap.from(servicesSecondHeading.current, {
+            gsap.from(secondHeadingSplit.lines, {
                 y: 100,
                 opacity: 0,
                 stagger: 0.05,
                 ease: "power4.out",
-                willChange: "transform, opacity",
+                force3D: true,
+                duration: 0.2,
                 scrollTrigger: {
                     trigger: imageRef.current,
                     start: "top center",
@@ -139,12 +144,13 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 }
             })
 
-            gsap.from(servicesSecondParagraph.current, {
+            gsap.from(secondParagraphSplit.lines, {
+                y: 100,
                 opacity: 0,
                 stagger: 0.05,
-                scale: 0.8,
-                willChange: "transform, opacity",
                 ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
                 scrollTrigger: {
                     trigger: imageRef.current,
                     start: "center center",
@@ -167,7 +173,11 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             isInitialized = false;
 
             ScrollTrigger.getAll().forEach(trigger => trigger.kill()); 
+            
             split.revert();
+            splitParagraph.revert();
+            secondHeadingSplit.revert();
+            secondParagraphSplit.revert();
 
             window.removeEventListener("load", onLoad);
         };

@@ -104,7 +104,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
     }, {dependencies: [fontsReady]})
 
     return (
-        <section ref={sectionRef} id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center items-center relative px-4 py-16 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-31">
+        <section ref={sectionRef} id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center items-center relative px-8 py-16 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-31">
             <div className="flex flex-col gap-4 pb-4 items-center">
                 <div className="w-full" ref={whatsappRef}>
                     <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
@@ -125,7 +125,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     </motion.a>
                 </div>
             </div>               
-            <div className="flex items-center gap-2" ref={buttonRef}>
+            <div className="flex items-center gap-2 w-full" ref={buttonRef}>
                 <div className="w-full">
                     <PrimaryButton link="https://www.instagram.com/prancecompany/"><i className="fa-brands fa-instagram"></i></PrimaryButton>
                 </div>
