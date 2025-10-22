@@ -25,7 +25,7 @@ function App() {
       <header className='font-sans fixed inset-0 z-100 pointer-events-none'>
         <Navbar></Navbar>
       </header>
-      <main className='font-sans relative bg-black'>
+      <main className='font-sans relative bg-[#0d1824]'>
         <AnimationWrapper></AnimationWrapper>
         <Hero fontsReady={fontsReady}></Hero>
         <About fontsReady={fontsReady}></About>
