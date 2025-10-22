@@ -157,19 +157,21 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     }
     else {
         return (
-            <section id="hero-section" className="h-[90vh] z-0 flex items-center justify-center px-8 relative gap-8">
+            <section id="hero-section" className="h-[90vh] z-0 flex items-center justify-center px-16 relative">
                 <img src={heroDesktop} alt="" className="w-full h-full object-cover absolute inset-0 z-0" />
                 <div className="w-full h-full absolute inset-0 z-10 bg-gradient-to-r from-bg-primary from-25% to-70% to-transparent mix-blend-multiply"></div>
-                <div className="w-[30vw] max-w-[500px] relative z-20">
-                    <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-200 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span> expertise que prepara sua marca para voar alto.</h1>
-                    <p ref={paragraphDesktopRef} className=" text-slate-200 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
-                    <div ref={buttonDesktopRef}>
-                        <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
-                            <motion.i variants={{initial: {scale: 1, opacity: 0.7}, hover: {scale: 1.2, opacity: 1}}} transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}  className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></motion.i>
-                        </SecondaryButton>
+                <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16">
+                    <div className="relative z-20">
+                        <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-200 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span> expertise que prepara sua marca para voar alto.</h1>
+                        <p ref={paragraphDesktopRef} className=" text-slate-200 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
+                        <div ref={buttonDesktopRef}>
+                            <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
+                                <motion.i variants={{initial: {scale: 1, opacity: 0.7}, hover: {scale: 1.2, opacity: 1}}} transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}  className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></motion.i>
+                            </SecondaryButton>
+                        </div>
                     </div>
+                    <div className="relative z-20">ola</div>
                 </div>
-                <div className="h-full w-[30vw] max-w-[700px] relative z-20">ola</div>
             </section> 
         )
     }
