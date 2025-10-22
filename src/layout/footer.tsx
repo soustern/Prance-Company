@@ -8,8 +8,6 @@ import { button } from "motion/react-client"
 
 gsap.registerPlugin(ScrollTrigger);
 
-// TODO: Add scrolltrigger animations
-
 interface footerProps {
     fontsReady: boolean
 }
@@ -44,7 +42,6 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     start: "20% bottom",
                     end: "40% bottom",
                     scrub: 1,
-                    markers: true
                 }
             });
             gsap.from(emailRef.current, {
@@ -59,7 +56,6 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     start: "40% bottom",
                     end: "60% bottom",
                     scrub: 1,
-                    markers: true
                 }
             });
             gsap.from(locationRef.current, {
