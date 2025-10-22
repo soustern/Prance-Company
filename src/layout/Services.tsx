@@ -9,6 +9,7 @@ import servicesBackground from "../assets/servicesBackground.webp";
 import card1 from "../assets/card1.webp";
 import card2 from "../assets/card2.webp";
 import card3 from "../assets/card3.webp";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -18,6 +19,8 @@ interface servicesProps {
 }
 
 const Services = ({fontsReady}: servicesProps): JSX.Element => {
+    const size = useWindowSize();
+
     const servicesHeading = useRef<HTMLHeadingElement>(null);
     const servicesParagraph = useRef<HTMLParagraphElement>(null);
     const servicesSecondHeading = useRef<HTMLHeadingElement>(null);
@@ -184,33 +187,51 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     }, {scope: sectionRef, dependencies: [fontsReady]});
 
 
-    return (
-    <section id="services-section" ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-10 py-16  flex flex-col items-center relative scroll-mt-20 overflow-hidden">
-            <div>
-                <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
-                <p ref={servicesParagraph} className="[will-change: opacity, transform] font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
-            </div>
-            <div className="relative cards flex flex-col mb-23 z-10">
-                <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
-                    <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                    <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                    <Card ref={thirdCardRef} className="z-30 card absolute top-110 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+    if (size < 975)
+    {
+        return (
+            <section id="services-section" ref={sectionRef} style={{backgroundImage: `linear-gradient(rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="  bg-bottom bg-no-repeat z-0 px-10 py-16  flex flex-col items-center relative scroll-mt-20 overflow-hidden">
+                <div>
+                    <h2 ref={servicesHeading} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-4 text-slate-200 relative z-10">3 pilares essenciais para <br></br> escalar sua marca</h2>
+                    <p ref={servicesParagraph} className="[will-change: opacity, transform] font-light pb-8 text-slate-300 relative z-10">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
                 </div>
-            </div>
-            <div className="relative z-10 h-[220px]"></div>
-            <div className="relative z-10 pb-8 flex items-center">
-                <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
-                <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
-            </div>
-            <div className="relative">
-                <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
-                <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform]  font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
-                Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
-                Fundou a Prance Company para transformar marcas em referências no mercado.</p>
-                <div className="absolute inset-0 z-0 w-[120%] h-full bg-gradient-to-t from-[#0d1824] to-transparent"></div>
-            </div>
-        </section>
-    )
+                <div className="relative cards flex flex-col mb-23 z-10">
+                    <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
+                        <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                        <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                        <Card ref={thirdCardRef} className="z-30 card absolute top-110 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                    </div>
+                </div>
+                <div className="relative z-10 h-[220px]"></div>
+                <div className="relative z-10 pb-8 flex items-center">
+                    <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
+                    <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
+                </div>
+                <div className="relative">
+                    <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
+                    <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform]  font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
+                    Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
+                    Fundou a Prance Company para transformar marcas em referências no mercado.</p>
+                    <div className="absolute inset-0 z-0 w-[120%] h-full bg-gradient-to-t from-[#0d1824] to-transparent"></div>
+                </div>
+            </section>
+        )
+    
+    }
+    else {
+        return (
+            <section id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-50 z-0 flex items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516]">
+                <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 relative z-10">
+                    <div className="relative z-20">
+                        <h1 className="relative z-10 text-4xl text-slate-300 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>
+                        <p className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
+                    </div>
+                    <div className="relative z-20"></div>
+                </div>
+            </section> 
+        )
+    }   
+    
 }
 
 export default Services;

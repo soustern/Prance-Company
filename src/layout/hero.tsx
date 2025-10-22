@@ -152,7 +152,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/85 bg-blend-hard-light"></div>
                 </div>
                 <div>
-                    <h1 ref={headingRef} className="relative z-10 text-3xl text-slate-200 pb-4"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span> expertise que prepara sua marca para voar alto.</h1>
+                    <h1 ref={headingRef} className="relative z-10 text-3xl text-slate-200 pb-4 font-light"><span className="text-accent-secondary">Do conceito ao lucro:</span> expertise que prepara sua marca para voar alto.</h1>
                     <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-8 relative z-10">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                 </div>
                 <div ref={buttonRef} className="relative z-10 w-full">
@@ -168,7 +168,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 <div className="w-full h-full absolute inset-0 z-10 bg-gradient-to-r from-bg-primary from-25% to-70% to-transparent mix-blend-multiply"></div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 relative z-10">
                     <div className="relative z-20">
-                        <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-200 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>
+                        <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>
                         <p ref={paragraphDesktopRef} className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                         <div ref={buttonDesktopRef}>
                             <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
