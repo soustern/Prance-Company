@@ -258,6 +258,35 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     scrub: 1,
                 }
             });
+
+            gsap.from(buttonDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    start: "80% bottom",
+                    end: "100% bottom",
+                    scrub: 1,
+                }
+            });
+
+            gsap.from(imageDesktopRef.current, {
+                x: -100,
+                opacity: 0,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    start: "10% center",
+                    end: "50% center",
+                    scrub: 1,
+                }
+            });
         }
 
         const initTimeout = setTimeout(initAnimations, 50);
