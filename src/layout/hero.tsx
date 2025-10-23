@@ -165,7 +165,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
         return (
             <section id="hero-section" className="h-[90vh] z-0 flex items-center justify-center px-16 relative">
                 <img src={heroDesktop} alt="" className="w-full h-full object-cover absolute inset-0 z-0" />
-                <div className="w-full h-full absolute inset-0 z-10 bg-gradient-to-r from-bg-primary from-25% to-70% to-transparent mix-blend-multiply"></div>
+                <div className="w-full h-full absolute inset-0 z-10 bg-gradient-to-r from-bg-primary from-25% to-70% to-transparent mix-blend-color-burn"></div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 relative z-10">
                     <div className="relative z-20">
                         <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>

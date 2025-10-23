@@ -100,7 +100,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 opacity: 1
             }).to(thirdCardRef.current, {
                 willChange: "transform, opacity",
-                top: 42,
+                top: 40,
                 duration: 0.2,
                 opacity: 1
             })
@@ -199,7 +199,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
                         <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
                         <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                        <Card ref={thirdCardRef} className="z-30 card absolute top-110 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                        <Card ref={thirdCardRef} className="z-30 card absolute top-120 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                     </div>
                 </div>
                 <div className="relative z-10 h-[220px]"></div>
@@ -220,13 +220,15 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     }
     else {
         return (
-            <section id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-50 z-0 flex items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516]">
-                <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 relative z-10">
-                    <div className="relative z-20">
-                        <h1 className="relative z-10 text-4xl text-slate-300 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>
-                        <p className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
-                    </div>
-                    <div className="relative z-20"></div>
+            <section id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-50 z-0 flex flex-col items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516] gap-12">
+                <div className="relative z-20 w-full max-w-[1200px] flex items-center justify-center flex-col">
+                    <h1 className="relative z-10 text-4xl text-slate-300 pb-8 font-light text-center">3 pilares essenciais para escalar sua marca</h1>
+                    <p  className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
+                </div>
+                <div className="w-full max-w-[1200px] grid grid-cols-3 gap-16 relative z-10">
+                    <Card className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                    <Card className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                    <Card className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                 </div>
             </section> 
         )
