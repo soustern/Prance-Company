@@ -115,8 +115,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 ease: "power4.out",
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "65% center",
-                    end: "75% center",
+                    start: "55% center",
+                    end: "65% center",
                     scrub: 1,
                 }
             });
@@ -128,8 +128,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 willChange: "transform",
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "65% center",
-                    end: "75% center",
+                    start: "55% center",
+                    end: "65% center",
                     scrub: 1,
                 }
             });
@@ -160,6 +160,20 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: imageRef.current,
                     start: "center center",
                     end: "150% center",
+                    scrub: 1,
+                }
+            })
+
+            gsap.from(buttonMobileRef.current, {
+                y: 100,
+                opacity: 0,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "95% bottom",
+                    end: "110% bottom",
                     scrub: 1,
                 }
             })
