@@ -242,7 +242,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
     else
     {
         return(
-            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-bg-primary">
+            <section id="footer-section" ref={sectionDesktopRef} className="py-24 z-0 flex items-center justify-center px-16 relative bg-bg-primary">
                 <div className="w-full max-w-[1200px] items-center justify-between gap-20 flex">
                     <div className="flex flex-col gap-4  items-baseline justify-center">
                         <div className="w-full" ref={whatsappDesktopRef}>

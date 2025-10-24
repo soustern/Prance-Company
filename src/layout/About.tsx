@@ -331,7 +331,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     }
     else {
         return (
-            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
+            <section id="about-section" ref={sectionDesktopRef} className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200 scroll-mt-50">
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
                     <div className="relative z-20 flex items-center justify-baseline">
                         <img ref={imageDesktopRef} src={about} alt="" className="w-[500px]" />

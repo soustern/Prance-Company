@@ -437,7 +437,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     }
     else {
         return (
-            <section ref={sectionDesktopRef} id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-24 z-0 flex flex-col items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516] gap-20">
+            <section id="services-section" ref={sectionDesktopRef} style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="scroll-mt-50 py-24 z-0 flex flex-col items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516] gap-20">
                 <div className="relative z-20 w-full max-w-[1200px] flex items-center justify-center flex-col">
                     <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light text-center">3 pilares essenciais para escalar sua marca</h1>
                     <p ref={paragraphDesktopRef}  className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>

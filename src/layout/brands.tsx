@@ -295,7 +295,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     }
     else {
         return (
-            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
+            <section id="brands-section" ref={sectionDesktopRef} className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200 scroll-mt-50">
                 <div className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-20">
                     <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
                     <div className="w-full flex flex-col items-center justify-center gap-24">
