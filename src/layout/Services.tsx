@@ -11,6 +11,7 @@ import card2 from "../assets/card2.webp";
 import card3 from "../assets/card3.webp";
 import { useWindowSize } from "../hooks/useWindowSize";
 import PrimaryButton from "../components/PrimaryButton";
+import { image } from "motion/react-client";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -34,6 +35,25 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     const imageRef = useRef<HTMLImageElement>(null);
     const imageBlurRef = useRef<HTMLImageElement>(null);
     const buttonMobileRef = useRef<HTMLDivElement>(null);
+
+    const buttonDesktopRef = useRef<HTMLDivElement>(null);
+    const headingDesktopRef = useRef<HTMLHeadingElement>(null);
+    const paragraphDesktopRef = useRef<HTMLParagraphElement>(null);
+    
+    const secondHeadingDesktopRef = useRef<HTMLHeadingElement>(null);
+    const secondFirstHalfParagraphDesktopRef = useRef<HTMLParagraphElement>(null);
+    const secondSecondHalfParagraphDesktopRef = useRef<HTMLParagraphElement>(null);
+  
+    const sectionDesktopRef = useRef<HTMLElement>(null);
+    
+    const firstCardDesktopRef = useRef<HTMLElement>(null);
+    const secondCardDesktopRef = useRef<HTMLElement>(null);
+    const thirdCardDesktopRef = useRef<HTMLElement>(null);
+    
+    const imageDesktopRef = useRef<HTMLDivElement>(null);
+
+
+
 
     useGSAP(() => {
         if (!fontsReady) return;
@@ -202,6 +222,80 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
         };
     }, {scope: sectionRef, dependencies: [fontsReady]});
 
+    useGSAP(() => {
+        if (!fontsReady) return;
+
+        const refs = [buttonDesktopRef, headingDesktopRef, paragraphDesktopRef, secondHeadingDesktopRef, secondFirstHalfParagraphDesktopRef, secondSecondHalfParagraphDesktopRef, sectionDesktopRef, firstCardDesktopRef, secondCardDesktopRef, thirdCardDesktopRef];
+        if (refs.some(ref => !ref.current)) return;
+
+        const splitHeading = new SplitText(headingDesktopRef.current, {type: "lines"});
+        const splitParagraph = new SplitText(paragraphDesktopRef.current, {type: "lines"});
+        const splitSecondHeading = new SplitText(secondHeadingDesktopRef.current, {type: "lines"});
+        const splitSecondParagraphFirstHalf = new SplitText(secondFirstHalfParagraphDesktopRef.current, {type: "lines"});
+        const splitSecondParagraphSecondHalf = new SplitText(secondSecondHalfParagraphDesktopRef.current, {type: "lines"});
+
+        let isInitialized = false;
+        const initAnimations = () => {
+            if (isInitialized) return;
+            isInitialized = true;
+
+            gsap.from(splitHeading.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    start: "top bottom",
+                    end: "25% bottom",
+                    scrub: 1,
+                }
+            });
+
+            gsap.from(splitParagraph.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    start: "10% bottom",
+                    end: "30% bottom",
+                    scrub: 1,
+                }
+            });
+
+
+        }
+
+        const initTimeout = setTimeout(initAnimations, 50);
+
+        const onLoad = () => {
+            ScrollTrigger.refresh();
+        };
+        
+        window.addEventListener("load", onLoad);
+
+        return () => {
+            splitHeading.revert();
+            splitParagraph.revert();
+            splitSecondHeading.revert();
+            splitSecondParagraphFirstHalf.revert();
+            splitSecondParagraphSecondHalf.revert();
+
+            ScrollTrigger.killAll();
+
+            clearTimeout(initTimeout);
+            window.removeEventListener("load", onLoad);
+
+            isInitialized = false;
+        };
+    }, {dependencies: [fontsReady]});
+
 
     if (size < 975)
     {
@@ -239,27 +333,31 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     }
     else {
         return (
-            <section id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-24 z-0 flex flex-col items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516] gap-20">
+            <section ref={sectionDesktopRef} id="hero-section" style={{backgroundImage: `linear-gradient(to top,rgba(15, 23, 43, 0.7), rgba(15, 23, 43, 0.6)), url(${servicesBackground})`}} className="py-24 z-0 flex flex-col items-center justify-center px-16 relative object-fill bg-no-repeat bg-fit bg-center bg-[#0b1516] gap-20">
                 <div className="relative z-20 w-full max-w-[1200px] flex items-center justify-center flex-col">
-                    <h1 className="relative z-10 text-4xl text-slate-300 pb-8 font-light text-center">3 pilares essenciais para escalar sua marca</h1>
-                    <p  className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
+                    <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light text-center">3 pilares essenciais para escalar sua marca</h1>
+                    <p ref={paragraphDesktopRef}  className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
                 </div>
                 <div className="flex justify-between w-full max-w-[1200px]">
-                    <Card className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                    <Card className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                    <Card className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                    <Card ref={firstCardDesktopRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                    <Card ref={secondCardDesktopRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                    <Card ref={thirdCardDesktopRef} className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                 </div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center mt-20">
                     <div className="relative z-20">
-                        <h1 className="relative z-10 text-4xl text-slate-800 pb-8 font-light">Mais que Agência, <br></br> sua
-                        Consultoria Estratégica.</h1>
-                        <p className=" text-slate-700 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Somos uma consultoria especializada em fornecer serviços de alto nível em marketing digital e branding para empresas que visam melhorar seu posicionamento e alcançar novos voos.
-                        <br></br><br></br>Planejamento completo, execução inteligente e acompanhamento contínuo para transformar autoridade em resultados reais.</p>
-                        <div>
+                        <h1 ref={secondHeadingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light">Conheça nossa FUNDADORA.</h1>
+                        <p ref={secondFirstHalfParagraphDesktopRef} className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed">
+                            Priscila Pavanette é publicitária, especialista em campanhas digitais, gestão de mídia paga e orgânica. Já liderou projetos que geraram resultados concretos e crescimento consistente para diversas marcas.
+                        </p>
+                        <p ref={secondSecondHalfParagraphDesktopRef} className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed mt-4">
+                            Atua com estratégias de marketing digital, branding e produção de conteúdo de alto impacto para empresas de diferentes segmentos.
+                            Ao longo da carreira, colaborou com empresas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli. Mais tarde, fundou a Prance Company, unindo toda sua expertise para transformar marcas em referências no mercado.
+                        </p>
+                        <div ref={buttonDesktopRef}>
                             <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                         </div>
                     </div>
-                    <div className="relative z-20 flex items-center justify-end">
+                    <div ref={imageDesktopRef} className="relative z-20 flex items-center justify-end">
                         <img src={servicesOwner} alt="" className="w-[500px]" />
                     </div>
                 </div>

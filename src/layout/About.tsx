@@ -282,8 +282,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    start: "top center",
-                    end: "30% center",
+                    start: "40% bottom",
+                    end: "60% center",
                     scrub: 1,
                 }
             });
