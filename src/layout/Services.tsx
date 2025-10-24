@@ -457,7 +457,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                             Atua com estratégias de marketing digital, branding e produção de conteúdo de alto impacto para empresas de diferentes segmentos.
                             Ao longo da carreira, colaborou com empresas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli. Mais tarde, fundou a Prance Company, unindo toda sua expertise para transformar marcas em referências no mercado.
                         </p>
-                        <div ref={buttonDesktopRef}>
+                        <div ref={buttonDesktopRef} className="w-full">
                             <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                         </div>
                     </div>

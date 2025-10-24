@@ -341,7 +341,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                         Consultoria Estratégica.</h1>
                         <p ref={paragraphDesktopRef} className=" text-slate-700 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Somos uma consultoria especializada em fornecer serviços de alto nível em marketing digital e branding para empresas que visam melhorar seu posicionamento e alcançar novos voos.
                         <br></br><br></br>Planejamento completo, execução inteligente e acompanhamento contínuo para transformar autoridade em resultados reais.</p>
-                        <div ref={buttonDesktopRef}>
+                        <div ref={buttonDesktopRef} className="w-full">
                             <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                         </div>
                     </div>

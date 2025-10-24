@@ -310,7 +310,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                             <img ref={image6DesktopRef} src={brand6} alt="" />
                         </div>
                     </div>
-                    <div ref={buttonDesktopRef}>
+                    <div ref={buttonDesktopRef} className="w-full flex justify-center">
                         <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                     </div>
                 </div>
