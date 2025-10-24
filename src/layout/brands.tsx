@@ -173,12 +173,12 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                 <div className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-20">
                     <h1 className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
                     <div className="w-full flex flex-col items-center justify-center gap-24">
-                        <div className="w-full [&>img]:w-80 [&>img]:h-80 [&>*]:rounded-4xl [&>img]:shadow-xl flex justify-between">
+                        <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>img]:shadow-xl flex justify-between">
                             <img loading="lazy" src={brand1} alt="" />
                             <img loading="lazy" src={brand2} alt="" />
                             <img loading="lazy" src={brand3} alt="" />
                         </div>  
-                        <div className="w-full [&>img]:w-80 [&>img]:h-80 [&>*]:rounded-4xl [&>*]:shadow-xl flex justify-between">
+                        <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>*]:shadow-xl flex justify-between">
                             <img loading="lazy" src={brand4} alt="" />
                             <img loading="lazy" src={brand5} alt="" />
                             <img loading="lazy" src={brand6} alt="" />
