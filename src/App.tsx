@@ -20,6 +20,7 @@ function App() {
     loadFonts();
   }, [])
 
+  //  TODO: Test
   return (
     <>
       <header className='font-sans fixed inset-0 z-100 pointer-events-none'>
