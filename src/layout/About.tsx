@@ -169,8 +169,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 willChange: "transform, opacity",
                 scrollTrigger: {
                     trigger: backgroundRef.current,
-                    start: "bottom bottom",
-                    end: "120% bottom",
+                    start: "90% bottom",
+                    end: "100% bottom",
                     scrub: 1,
                 }
             })
@@ -321,7 +321,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 </div>
                 <div>
                     <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-slate-800 font-medium text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
-                    <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 font-light text-slate-700 pb-4">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
+                    <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 font-light text-slate-700 pb-8">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
                 </div>
                 <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonRef}>
                     <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>

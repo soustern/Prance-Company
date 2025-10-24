@@ -33,6 +33,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     const thirdCardRef = useRef<HTMLElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
     const imageBlurRef = useRef<HTMLImageElement>(null);
+    const buttonMobileRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         if (!fontsReady) return;
@@ -210,10 +211,13 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 </div>
                 <div className="relative">
                     <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
-                    <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform]  font-light text-slate-300 relative z-10">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
+                    <p ref={servicesSecondParagraph}  className="[will-change: opacity, transform]  font-light text-slate-300 relative z-10 pb-8">Priscila Pavanette é publicitária especialista em campanhas digitais e gestão de mídia. <br></br>
                     Liderou projetos para marcas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli, gerando resultados consistentes.<br></br>
                     Fundou a Prance Company para transformar marcas em referências no mercado.</p>
                     <div className="absolute inset-0 z-0 w-[120%] h-full bg-gradient-to-t from-[#0d1824] to-transparent"></div>
+                    <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonMobileRef}>
+                        <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
+                    </div>
                 </div>
             </section>
         )
