@@ -282,8 +282,8 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    start: "10% center",
-                    end: "50% center",
+                    start: "top center",
+                    end: "30% center",
                     scrub: 1,
                 }
             });
@@ -331,9 +331,9 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
     }
     else {
         return (
-            <section ref={sectionDesktopRef} id="about-section" className="py-50 z-0 flex items-center justify-center px-16 relative bg-slate-200">
+            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
-                    <div className="relative z-20 flex items-center justify-center">
+                    <div className="relative z-20 flex items-center justify-baseline">
                         <img ref={imageDesktopRef} src={about} alt="" className="w-[500px]" />
                     </div>
                     <div className="relative z-20">
