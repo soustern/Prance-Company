@@ -234,6 +234,21 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                 force3D: true,
                 duration: 0.2,
             });
+
+            gsap.from(buttonDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "90% bottom",
+                    end: "110% bottom",
+                }
+            });
         };
 
         const initTimeout = setTimeout(initAnimation, 50);
