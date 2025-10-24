@@ -51,9 +51,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
     
     const imageDesktopRef = useRef<HTMLDivElement>(null);
 
-
-
-
     useGSAP(() => {
         if (!fontsReady) return;
 
