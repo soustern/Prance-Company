@@ -353,7 +353,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     scrub: 1,
                     start: "90% bottom",
-                    end: "100% bottom",
+                    end: "110% bottom",
                 }
             });
 
