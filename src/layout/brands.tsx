@@ -169,7 +169,17 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     }
     else {
         return (
-            <></>
+            <section id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
+                <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
+                    <h1 className="relative z-10 text-4xl text-slate-800 pb-8 font-light">Mais que Agência, <br></br> sua Consultoria Estratégica.</h1>
+                    <div>
+
+                    </div>
+                    <div>
+                        <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
+                    </div>
+                </div>
+            </section>
         )
     }
 }
