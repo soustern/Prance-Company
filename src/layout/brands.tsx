@@ -10,6 +10,7 @@ import PrimaryButton from "../components/PrimaryButton";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 interface brandsProps {
     fontsReady: boolean
@@ -19,6 +20,8 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
 const Brands = ({fontsReady}: brandsProps): JSX.Element => {
+    const size = useWindowSize();
+
     const marqueeRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
     const marqueeContainerRef = useRef<HTMLDivElement>(null);
@@ -141,26 +144,34 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
 
     }, {dependencies: [fontsReady]});
 
-    return (
-        <section ref={sectionRef} id="brands-section" className="bg-slate-200 flex flex-col items-center justify-center relative px-10 py-16 overflow-hidden">
-            <div>
-                <h2 ref={headingRef} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-12 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance:</h2>
-            </div>
-            <div ref={marqueeContainerRef} className="w-[150%] overflow-x-hidden relative pb-16">
-                <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
-                    <img loading="lazy" src={brand1} alt="" />
-                    <img loading="lazy" src={brand2} alt="" />
-                    <img loading="lazy" src={brand3} alt="" />
-                    <img loading="lazy" src={brand4} alt="" />
-                    <img loading="lazy" src={brand5} alt="" />
-                    <img loading="lazy" src={brand6} alt="" />
+    if (size < 975)
+    {
+        return (
+            <section ref={sectionRef} id="brands-section" className="bg-slate-200 flex flex-col items-center justify-center relative px-10 py-16 overflow-hidden">
+                <div>
+                    <h2 ref={headingRef} className="[will-change: opacity, transform] font-medium text-2xl leading-tight pb-12 text-[var(--color-bg-primary)] relative z-10">Quem já voou com a Prance:</h2>
                 </div>
-            </div>
-            <div ref={buttonRef} className="relative z-10 w-full">
-                <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
-            </div>
-        </section>
-    )
+                <div ref={marqueeContainerRef} className="w-[150%] overflow-x-hidden relative pb-16">
+                    <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
+                        <img loading="lazy" src={brand1} alt="" />
+                        <img loading="lazy" src={brand2} alt="" />
+                        <img loading="lazy" src={brand3} alt="" />
+                        <img loading="lazy" src={brand4} alt="" />
+                        <img loading="lazy" src={brand5} alt="" />
+                        <img loading="lazy" src={brand6} alt="" />
+                    </div>
+                </div>
+                <div ref={buttonRef} className="relative z-10 w-full">
+                    <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
+                </div>
+            </section>
+        )
+    }
+    else {
+        return (
+            <></>
+        )
+    }
 }
 
 export default Brands 

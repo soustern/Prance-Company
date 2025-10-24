@@ -100,7 +100,8 @@ const NavBar = (): JSX.Element => {
                             })
                         }
                     </ul>
-                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar" className="max-w-[250px]"></PrimaryButton>
+                    {/* This -mt[130px] is used here to truly centralize the navOption on the screen due to the logo having 130px less in width when compared to the button */}
+                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar" className="2xl:-ml-[130px] max-w-[250px]"></PrimaryButton>
                 </div>
             </nav>
         )
