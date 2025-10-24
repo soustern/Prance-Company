@@ -28,6 +28,16 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
 
+    const headingDesktopRef = useRef<HTMLHeadingElement>(null);
+    const image1DesktopRef = useRef<HTMLImageElement>(null);
+    const image2DesktopRef = useRef<HTMLImageElement>(null);
+    const image3DesktopRef = useRef<HTMLImageElement>(null);
+    const image4DesktopRef = useRef<HTMLImageElement>(null);
+    const image5DesktopRef = useRef<HTMLImageElement>(null);
+    const image6DesktopRef = useRef<HTMLImageElement>(null);
+    const buttonDesktopRef = useRef<HTMLDivElement>(null);
+    const sectionDesktopRef = useRef<HTMLElement>(null);
+
     useGSAP(() => {
         if (!fontsReady) return;
 
@@ -144,6 +154,107 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
 
     }, {dependencies: [fontsReady]});
 
+    useGSAP(() => {
+        if (!fontsReady) return;
+
+        const refs = [headingDesktopRef, image1DesktopRef, image2DesktopRef, image3DesktopRef, image4DesktopRef, image5DesktopRef, image6DesktopRef, buttonDesktopRef, sectionDesktopRef];
+        if (refs.some(ref => !ref.current)) return;
+
+        const split = new SplitText(headingDesktopRef.current, {type: "lines"});
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionDesktopRef.current,
+                scrub: 1,
+                start: "35% bottom",
+                end: "90% bottom",
+            }
+        });
+
+        let isInitialized = false;
+        const initAnimation = () => {
+            if (isInitialized) return;
+            isInitialized = true;
+
+            gsap.from(split.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    start: "10% bottom",
+                    end: "25% bottom",
+                    scrub: 1,
+                }
+            });
+
+            tl.from(image1DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(image2DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(image3DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(image4DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(image5DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(image6DesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+        };
+
+        const initTimeout = setTimeout(initAnimation, 50);
+
+        const onload = () => {
+            ScrollTrigger.refresh();
+        }
+
+        document.addEventListener("load", onload);
+
+        return () => {
+            clearTimeout(initTimeout);
+            document.removeEventListener("load", onload);
+            isInitialized = false;
+            ScrollTrigger.killAll();
+            split.revert();
+            tl.kill();
+        }
+
+    }, {dependencies: [fontsReady]});
+
     if (size < 975)
     {
         return (
@@ -169,19 +280,19 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
     }
     else {
         return (
-            <section id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
+            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
                 <div className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-20">
                     <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
                     <div className="w-full flex flex-col items-center justify-center gap-24">
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>img]:shadow-xl flex justify-between">
-                            <img ref={image1DesktopRef} loading="lazy" src={brand1} alt="" />
-                            <img ref={image2DesktopRef} loading="lazy" src={brand2} alt="" />
-                            <img ref={image3DesktopRef} loading="lazy" src={brand3} alt="" />
+                            <img ref={image1DesktopRef} src={brand1} alt="" />
+                            <img ref={image2DesktopRef} src={brand2} alt="" />
+                            <img ref={image3DesktopRef} src={brand3} alt="" />
                         </div>  
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>*]:shadow-xl flex justify-between">
-                            <img ref={image4DesktopRef} loading="lazy" src={brand4} alt="" />
-                            <img ref={image5DesktopRef} loading="lazy" src={brand5} alt="" />
-                            <img ref={image6DesktopRef} loading="lazy" src={brand6} alt="" />
+                            <img ref={image4DesktopRef} src={brand4} alt="" />
+                            <img ref={image5DesktopRef} src={brand5} alt="" />
+                            <img ref={image6DesktopRef} src={brand6} alt="" />
                         </div>
                     </div>
                     <div ref={buttonDesktopRef}>

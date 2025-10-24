@@ -237,7 +237,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 start: "20% bottom",
                 end: "65% bottom",
             }
-        })
+        });
 
         let isInitialized = false;
         const initAnimations = () => {
@@ -253,7 +253,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    start: "top bottom",
+                    start: "10% bottom",
                     end: "25% bottom",
                     scrub: 1,
                 }
@@ -368,7 +368,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     scrub: 1,
                     start: "70% bottom",
-                    end: "130% bottom",
+                    end: "140% bottom",
                 }
             });
 
