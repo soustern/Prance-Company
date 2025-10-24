@@ -171,20 +171,20 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
         return (
             <section id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200">
                 <div className="w-full max-w-[1200px] flex flex-col items-center justify-center gap-20">
-                    <h1 className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
+                    <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
                     <div className="w-full flex flex-col items-center justify-center gap-24">
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>img]:shadow-xl flex justify-between">
-                            <img loading="lazy" src={brand1} alt="" />
-                            <img loading="lazy" src={brand2} alt="" />
-                            <img loading="lazy" src={brand3} alt="" />
+                            <img ref={image1DesktopRef} loading="lazy" src={brand1} alt="" />
+                            <img ref={image2DesktopRef} loading="lazy" src={brand2} alt="" />
+                            <img ref={image3DesktopRef} loading="lazy" src={brand3} alt="" />
                         </div>  
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>*]:shadow-xl flex justify-between">
-                            <img loading="lazy" src={brand4} alt="" />
-                            <img loading="lazy" src={brand5} alt="" />
-                            <img loading="lazy" src={brand6} alt="" />
+                            <img ref={image4DesktopRef} loading="lazy" src={brand4} alt="" />
+                            <img ref={image5DesktopRef} loading="lazy" src={brand5} alt="" />
+                            <img ref={image6DesktopRef} loading="lazy" src={brand6} alt="" />
                         </div>
                     </div>
-                    <div>
+                    <div ref={buttonDesktopRef}>
                         <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                     </div>
                 </div>

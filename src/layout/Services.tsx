@@ -230,6 +230,15 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
         const splitSecondParagraphFirstHalf = new SplitText(secondFirstHalfParagraphDesktopRef.current, {type: "lines"});
         const splitSecondParagraphSecondHalf = new SplitText(secondSecondHalfParagraphDesktopRef.current, {type: "lines"});
 
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionDesktopRef.current,
+                scrub: 1,
+                start: "20% bottom",
+                end: "65% bottom",
+            }
+        })
+
         let isInitialized = false;
         const initAnimations = () => {
             if (isInitialized) return;
@@ -264,15 +273,6 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     scrub: 1,
                 }
             });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionDesktopRef.current,
-                    scrub: 1,
-                    start: "20% bottom",
-                    end: "65% bottom",
-                }
-            })
 
             tl.from(firstCardDesktopRef.current, {
                 y: 100,
@@ -395,6 +395,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
             window.removeEventListener("load", onLoad);
 
             isInitialized = false;
+
+            tl.kill();
         };
     }, {dependencies: [fontsReady]});
 
