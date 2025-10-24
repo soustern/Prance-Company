@@ -269,6 +269,112 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 }
             });
 
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "20% bottom",
+                    end: "65% bottom",
+                }
+            })
+
+            tl.from(firstCardDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(secondCardDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            }).from(thirdCardDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+
+            gsap.from(splitSecondHeading.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "60% bottom",
+                    end: "70% bottom",
+                }
+            });
+
+            gsap.from(splitSecondParagraphFirstHalf.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "65% bottom",
+                    end: "75% bottom",
+                }
+            });
+
+            gsap.from(splitSecondParagraphSecondHalf.lines, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "75% bottom",
+                    end: "95% bottom",
+                }
+            });
+
+            gsap.from(buttonDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "90% bottom",
+                    end: "100% bottom",
+                }
+            });
+
+            gsap.from(imageDesktopRef.current, {
+                x: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+                scrollTrigger: {
+                    trigger: sectionDesktopRef.current,
+                    scrub: 1,
+                    start: "70% bottom",
+                    end: "130% bottom",
+                }
+            });
 
         }
 
