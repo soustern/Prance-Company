@@ -16,8 +16,6 @@ const NavBar = (): JSX.Element => {
     }
 
 
-    // TODO: Create desktop version
-
     if (size <= 975)
     {
         return (

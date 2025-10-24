@@ -9,7 +9,6 @@ interface cardProps {
     image?: string
 }
 
-// TODO: Fix Icon Positioning
 
 const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className, image}, ref): JSX.Element => {
     return (

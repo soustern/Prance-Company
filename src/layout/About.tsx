@@ -16,8 +16,6 @@ gsap.registerPlugin(SplitText);
 interface aboutProps {
     fontsReady: boolean
 }
-// TODO: Make desktop version
-// TODO: Discover why animation is not playing in production
 
 
 const About = ({fontsReady}: aboutProps): JSX.Element => {

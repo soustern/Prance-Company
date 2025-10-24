@@ -8,17 +8,12 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import heroDesktop from "../assets/heroDesktop.webp";
 import { motion } from "motion/react";
 
-// TODO: Make this responsive in web version
-// TODO: Make web version
-
 gsap.registerPlugin(SplitText)
 
 interface heroProps {
     fontsReady: boolean
 }
 
-// TODO: Time the animations here better
-// Trigger commit
 
 const Hero = ({fontsReady}: heroProps): JSX.Element => {
     const size = useWindowSize();

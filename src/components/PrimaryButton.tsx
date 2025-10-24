@@ -8,7 +8,6 @@ interface PrimaryButtonProps {
     link?: string
 }
 
-// TODO: Add hover animation
 const PrimaryButton = ({text, children, className, link}: PrimaryButtonProps): JSX.Element => {
 
     const variants = {
