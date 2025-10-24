@@ -11,7 +11,6 @@ import card2 from "../assets/card2.webp";
 import card3 from "../assets/card3.webp";
 import { useWindowSize } from "../hooks/useWindowSize";
 import PrimaryButton from "../components/PrimaryButton";
-import { image } from "motion/react-client";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
