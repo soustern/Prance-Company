@@ -21,6 +21,14 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
     const buttonRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
 
+    const whatsappDesktopRef = useRef<HTMLDivElement>(null);
+    const emailDesktopRef = useRef<HTMLDivElement>(null);
+    const locationDesktopRef = useRef<HTMLDivElement>(null);
+    const instagramDesktopRef = useRef<HTMLDivElement>(null);
+    const facebookDesktopRef = useRef<HTMLDivElement>(null);
+    const linkedinDesktopRef = useRef<HTMLDivElement>(null);
+    const sectionDesktopRef = useRef<HTMLElement>(null);
+
     useGSAP(() => {
         if (!fontsReady) return;
         
@@ -106,6 +114,93 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
         }
     }, {dependencies: [fontsReady]})
 
+    useGSAP(() => {
+        if (!fontsReady) return;
+        
+        const refs = [whatsappDesktopRef, emailDesktopRef, locationDesktopRef, instagramDesktopRef, facebookDesktopRef, linkedinDesktopRef, sectionDesktopRef];
+        if (refs.some(ref => !ref.current)) return;
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: sectionDesktopRef.current,
+                start: "50% bottom",
+                end: "bottom bottom",
+                scrub: 1
+            }
+        });
+
+        let isInitialized = false;
+        const initAnimation = () => {
+            if (isInitialized) return;
+            isInitialized = true;
+
+            tl.from(whatsappDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+            tl.from(emailDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+            tl.from(locationDesktopRef.current, {
+                y: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+            tl.from(instagramDesktopRef.current, {
+                x: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+            tl.from(facebookDesktopRef.current, {
+                x: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+            tl.from(linkedinDesktopRef.current, {
+                x: 100,
+                opacity: 0,
+                stagger: 0.05,
+                ease: "power4.out",
+                force3D: true,
+                duration: 0.2,
+            });
+        }
+
+        const initTimeout = setTimeout(initAnimation, 50);
+
+        const onload = () => {
+            ScrollTrigger.refresh();
+        }
+
+        document.addEventListener("load", onload);
+
+        return () => {
+            document.removeEventListener("load", onload);
+            ScrollTrigger.killAll();
+            isInitialized = false;
+            clearTimeout(initTimeout);
+            tl.kill();
+        }
+    }, {dependencies: [fontsReady]})
+
     if (size < 975)
     {
         return (
@@ -147,32 +242,38 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
     else
     {
         return(
-            <section id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-bg-primary">
+            <section ref={sectionDesktopRef} id="about-section" className="py-24 z-0 flex items-center justify-center px-16 relative bg-bg-primary">
                 <div className="w-full max-w-[1200px] items-center justify-between gap-20 flex">
                     <div className="flex flex-col gap-4  items-baseline justify-center">
-                        <div className="w-full" ref={whatsappRef}>
+                        <div className="w-full" ref={whatsappDesktopRef}>
                             <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
                                 <i className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></i>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1">17 99155 2417</p>
                             </motion.a>
                         </div>
-                        <div className="w-full" ref={emailRef}>
+                        <div className="w-full" ref={emailDesktopRef}>
                             <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="mailto:contato@prancecompany.com?subject=Olá, gostaria de saber mais sobre a consultoria estratégica." target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
                                 <i className="fa-regular fa-envelope [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 ">contato@prancecompany.com</p>
                             </motion.a>
                         </div>
-                        <div className="w-full" ref={locationRef}>
+                        <div className="w-full" ref={locationDesktopRef}>
                             <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.8166124,-49.5474288,93777m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
                                 <i className="fa-regular fa-map [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 ">São José do Rio Preto/SP</p>
                             </motion.a>
                         </div>
                     </div>               
-                    <div className="flex flex-col items-end justify-center gap-2 w-full" ref={buttonRef}>
-                            <PrimaryButton className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><i className="fa-brands fa-instagram"></i></PrimaryButton>
-                            <PrimaryButton className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><i className="fa-brands fa-facebook-f"></i></PrimaryButton>
-                            <PrimaryButton className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><i className="fa-brands fa-linkedin-in"></i></PrimaryButton>
+                    <div className="flex flex-col items-end justify-center gap-2 w-full">
+                            <div ref={instagramDesktopRef} className="w-full flex justify-end">
+                                <PrimaryButton className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><i className="fa-brands fa-instagram"></i></PrimaryButton>
+                            </div>
+                            <div ref={facebookDesktopRef} className="w-full flex justify-end">
+                                <PrimaryButton className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><i className="fa-brands fa-facebook-f"></i></PrimaryButton>
+                            </div>
+                            <div ref={linkedinDesktopRef} className="w-full flex justify-end">
+                                <PrimaryButton className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><i className="fa-brands fa-linkedin-in"></i></PrimaryButton>
+                            </div>
                     </div>
                 </div>
             </section>
