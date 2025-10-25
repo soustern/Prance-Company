@@ -82,7 +82,7 @@ const NavBar = (): JSX.Element => {
             <nav className="bg-[var(--color-bg-primary)]/60 backdrop-blur-3xl px-12 py-3 pointer-events-auto ">
                 <div className="flex items-center justify-between gap-12">
                     <div id="logo">
-                        <img src={logo} className="max-w-[120px]" alt="" />
+                        <img alt="Imagem da logo da empresa contendo um passaro e os dizeres: prance" src={logo} className="max-w-[120px]" />
                     </div>
                     <ul className="flex flex-1 justify-center items-center max-w-[800px]">
                         {

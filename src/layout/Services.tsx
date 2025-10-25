@@ -411,15 +411,15 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 </div>
                 <div className="relative cards flex flex-col mb-23 z-10">
                     <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
-                        <Card ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                        <Card ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                        <Card ref={thirdCardRef} className="z-30 card absolute top-120 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                        <Card alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                        <Card alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                        <Card alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardRef} className="z-30 card absolute top-120 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                     </div>
                 </div>
                 <div className="relative z-10 h-[220px]"></div>
                 <div className="relative z-10 pb-8 flex items-center">
-                    <img loading="lazy" decoding="async" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
-                    <img loading="lazy" decoding="async" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
+                    <img alt="Imagem da proprietaria da empresa com os dizeres: mais de 10 anos de experiencia" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10"  />
+                    <img alt="Imagem Borrada da proprietaria da empresa com os dizeres: mais de 10 anos de experiencia" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs"  />
                 </div>
                 <div className="relative">
                     <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
@@ -443,9 +443,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     <p ref={paragraphDesktopRef}  className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
                 </div>
                 <div className="flex justify-between w-full max-w-[1200px]">
-                    <Card ref={firstCardDesktopRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                    <Card ref={secondCardDesktopRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                    <Card ref={thirdCardDesktopRef} className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                    <Card alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardDesktopRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                    <Card alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardDesktopRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                    <Card alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardDesktopRef} className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                 </div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center mt-20">
                     <div className="relative z-20">
@@ -462,7 +462,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                         </div>
                     </div>
                     <div ref={imageDesktopRef} className="relative z-20 flex items-center justify-end">
-                        <img loading="lazy" decoding="async" src={servicesOwner} alt="" className="w-[500px]" />
+                        <img alt="Imagem da proprietaria da empresa com os dizeres: mais de 10 anos de experiencia" src={servicesOwner} className="w-[500px]" />
                     </div>
                 </div>
             </section> 

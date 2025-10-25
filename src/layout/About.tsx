@@ -308,14 +308,14 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
         return (
             <section id="about-section" className="bg-[var(--color-bg-primary)] flex flex-col items-center justify-center relative px-10 py-16 scroll-mt-15">
                 <div className="absolute flex left-1/2 -top-16 transform -translate-x-1/2 translate-y-[1px] z-10 gap-0 ">
-                    <img src={aboutUiElement} alt="" className="w-22" />
+                    <img alt="elemento decorativo" src={aboutUiElement} className="w-22" />
                     <i  ref={iconRef} className="[will-change: opacity] fa-solid fa-arrow-down text-2xl text-[var(--color-bg-primary)] animate-bounce absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></i>
-                    <img ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
+                    <img alt="logo da empresa" ref={logoRef} src={logoAbout} className="[will-change: opacity] w-8 absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
                 </div>
                 <div ref={backgroundRef} className="[will-change: transform] absolute z-0 inset-0 bg-slate-200 w-full h-full transform origin-center scale-x-80 rounded-t-4xl"></div>
                 <div className="relative z-10 pb-8">
-                    <img  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
-                    <img  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
+                    <img alt="Imagem de um passaro voando com os dizeres: Parceria de alto Nivel. Seus Voos mais altos."  src={about} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10"  />
+                    <img alt="Imagem borrada de um passaro voando com os dizeres: Parceria de alto Nivel. Seus Voos mais altos."  src={about} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs"  />
                 </div>
                 <div>
                     <h2 ref={aboutHeading} className="[will-change: transform, opacity] relative z-10 text-slate-800 font-medium text-2xl leading-tight pb-4">Mais que Agência, <br></br> sua Consultoria Estratégica!</h2>
@@ -332,7 +332,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
             <section id="about-section" ref={sectionDesktopRef} className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200 scroll-mt-50">
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
                     <div className="relative z-20 flex items-center justify-baseline">
-                        <img loading="lazy" decoding="async" ref={imageDesktopRef} src={about} alt="" className="w-[500px]" />
+                        <img alt="Imagem de um passaro voando com os dizeres: Parceria de alto Nivel. Seus Voos mais altos." loading="lazy" decoding="async" ref={imageDesktopRef} src={about}  className="w-[500px]" />
                     </div>
                     <div className="relative z-20">
                         <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 pb-8 font-light">Mais que Agência, <br></br> sua
