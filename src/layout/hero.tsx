@@ -48,7 +48,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.5,
+                delay: 1.35,
                 duration: 1.1,
                 });
 
@@ -58,7 +58,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.8,
+                delay: 1.65,
                 duration: 1.1,
                 });
 
@@ -68,7 +68,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 3.2,
+                delay: 1.95,
                 duration: 1.1,
                 });
         };
@@ -105,7 +105,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.5,
+                delay: 1.35,
                 duration: 1.1,
                 });
 
@@ -115,7 +115,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 stagger: 0.08,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 2.8,
+                delay: 1.65,
                 duration: 1.1,
                 });
 
@@ -124,7 +124,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                 opacity: 0,
                 ease: "power4.out",
                 willChange: "transform, opacity",
-                delay: 3.2,
+                delay: 1.95,
                 duration: 1.1,
                 });
         }

@@ -8,10 +8,10 @@ const AnimationWrapper = (): JSX.Element => {
     const logoRef = useRef<HTMLImageElement>(null);
 
     useGSAP(() => {
-        gsap.to(wrapperRef.current, {scaleY: 0, transformOrigin: "bottom", delay: 2.5, duration: 0.5, ease: "power4.out"});
+        gsap.to(wrapperRef.current, {scaleY: 0, transformOrigin: "bottom", delay: 1.35, duration: 0.25, ease: "power4.out"});
         const tl = gsap.timeline();
 
-        tl.from(logoRef.current, {opacity: 0, scale: 0.5, duration: 1, ease: "power4.out"}).to(logoRef.current, {opacity: 1, scale: 1, duration: 1.2, ease: "power4.out"}).to(logoRef.current, {opacity: 0, scale: 0.5, duration: 0.5, ease: "power4.out"});
+        tl.from(logoRef.current, {opacity: 0, scale: 0.5, duration: 0.5, ease: "power4.out"}).to(logoRef.current, {opacity: 1, scale: 1, duration: 0.6, ease: "power4.out"}).to(logoRef.current, {opacity: 0, scale: 0.5, duration: 0.25, ease: "power4.out"});
     });
 
     return (
