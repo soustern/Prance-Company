@@ -418,8 +418,8 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 </div>
                 <div className="relative z-10 h-[220px]"></div>
                 <div className="relative z-10 pb-8 flex items-center">
-                    <img src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
-                    <img src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
+                    <img loading="lazy" decoding="async" src={servicesOwner} ref={imageRef} className="[will-change: transform, opacity] max-w-[300px] relative z-10" alt="" />
+                    <img loading="lazy" decoding="async" src={servicesOwner} ref={imageBlurRef} className="[will-change: transform, opacity] max-w-[300px] absolute inset-0 z-10 blur-xs" alt="" />
                 </div>
                 <div className="relative">
                     <h2 ref={servicesSecondHeading}  className="[will-change: opacity, transform] font-medium  text-2xl leading-tight pb-4 text-slate-200 relative z-10">Conheça nossa FUNDADORA</h2>
@@ -462,7 +462,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                         </div>
                     </div>
                     <div ref={imageDesktopRef} className="relative z-20 flex items-center justify-end">
-                        <img src={servicesOwner} alt="" className="w-[500px]" />
+                        <img loading="lazy" decoding="async" src={servicesOwner} alt="" className="w-[500px]" />
                     </div>
                 </div>
             </section> 

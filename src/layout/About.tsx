@@ -332,7 +332,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
             <section id="about-section" ref={sectionDesktopRef} className="py-24 z-0 flex items-center justify-center px-16 relative bg-slate-200 scroll-mt-50">
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
                     <div className="relative z-20 flex items-center justify-baseline">
-                        <img ref={imageDesktopRef} src={about} alt="" className="w-[500px]" />
+                        <img loading="lazy" decoding="async" ref={imageDesktopRef} src={about} alt="" className="w-[500px]" />
                     </div>
                     <div className="relative z-20">
                         <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 pb-8 font-light">Mais que Agência, <br></br> sua
