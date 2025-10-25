@@ -68,7 +68,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: iconRef.current,
                     start: "top center",
                     end: "+=100 center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -80,7 +80,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: iconRef.current,
                     start: "+=50 center",
                     end: "bottom center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -95,7 +95,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: iconRef.current,
                     start: "center center",
                     end: "+=100 center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -109,7 +109,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: iconRef.current,
                     start: "center center",
                     end: "+=100 center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -122,7 +122,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: iconRef.current,
                     start: "center center",
                     end: "+=100 center",
-                    scrub: 1,                
+                    scrub: 0.5,                
                 }
             });
 
@@ -139,7 +139,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: imageRef.current,
                     start: "top center",
                     end: "center center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
 
@@ -154,7 +154,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: imageRef.current,
                     start: "center center",
                     end: "bottom center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
 
@@ -169,7 +169,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: backgroundRef.current,
                     start: "90% bottom",
                     end: "100% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
         }
@@ -238,7 +238,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "40% bottom",
                     end: "60% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -253,7 +253,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "50% bottom",
                     end: "90% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -268,7 +268,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "80% bottom",
                     end: "100% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -282,7 +282,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "40% bottom",
                     end: "60% center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
         }

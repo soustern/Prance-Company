@@ -77,7 +77,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "top bottom",
                     end: "top center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -92,7 +92,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "40% bottom",
                     end: "center center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -107,7 +107,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "center bottom",
                     end: "bottom bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -165,7 +165,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionDesktopRef.current,
-                scrub: 1,
+                scrub: 0.5,
                 start: "35% bottom",
                 end: "90% bottom",
             }
@@ -187,7 +187,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "10% bottom",
                     end: "25% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -244,7 +244,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "90% bottom",
                     end: "110% bottom",
                 }

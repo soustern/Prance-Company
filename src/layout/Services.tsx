@@ -82,7 +82,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "top bottom",
                     end: "top center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -97,7 +97,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: servicesHeading.current,
                     start: "top 80%",
                     end: "top 40%",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
 
@@ -106,7 +106,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: ".card-wrapper",
                     start: "-=100px top",
                     end: "bottom center",
-                    scrub: 1,
+                    scrub: 0.5,
                     pin: true,
                 }
             });
@@ -133,7 +133,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "55% center",
                     end: "65% center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -146,7 +146,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "55% center",
                     end: "65% center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -161,7 +161,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: imageRef.current,
                     start: "top center",
                     end: "center center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
 
@@ -176,7 +176,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: imageRef.current,
                     start: "center center",
                     end: "150% center",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
 
@@ -190,7 +190,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "95% bottom",
                     end: "110% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             })
         }
@@ -255,7 +255,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "10% bottom",
                     end: "25% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -270,7 +270,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     trigger: sectionDesktopRef.current,
                     start: "10% bottom",
                     end: "30% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -306,7 +306,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "60% bottom",
                     end: "70% bottom",
                 }
@@ -321,7 +321,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "65% bottom",
                     end: "80% bottom",
                 }
@@ -336,7 +336,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "75% bottom",
                     end: "100% bottom",
                 }
@@ -351,7 +351,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "90% bottom",
                     end: "110% bottom",
                 }
@@ -366,7 +366,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 duration: 0.2,
                 scrollTrigger: {
                     trigger: sectionDesktopRef.current,
-                    scrub: 1,
+                    scrub: 0.5,
                     start: "70% bottom",
                     end: "140% bottom",
                 }

@@ -51,7 +51,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "20% bottom",
                     end: "40% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
             gsap.from(emailRef.current, {
@@ -65,7 +65,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "40% bottom",
                     end: "60% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
             gsap.from(locationRef.current, {
@@ -79,7 +79,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "60% bottom",
                     end: "80% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
 
@@ -93,7 +93,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     trigger: sectionRef.current,
                     start: "80% bottom",
                     end: "100% bottom",
-                    scrub: 1,
+                    scrub: 0.5,
                 }
             });
         }
@@ -125,7 +125,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                 trigger: sectionDesktopRef.current,
                 start: "50% bottom",
                 end: "bottom bottom",
-                scrub: 1
+                scrub: 0.5,
             }
         });
 
