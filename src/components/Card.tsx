@@ -7,16 +7,17 @@ interface cardProps {
     icon?: string,
     className?: string
     image?: string
+    alt?: string
 }
 
 
-const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className, image}, ref): JSX.Element => {
+const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className, image, alt}, ref): JSX.Element => {
     return (
         <article ref={ref} className={`flex flex-col overflow-hidden bg-slate-200 rounded-4xl pb-8 shadow-xl border h-[470px] border-slate-200 max-w-[320px] ${className} pointer-events-auto`}>
             <div className="flex flex-col gap-8 items-center justify-center pb-4">
                 <div className=" w-full h-[95px] flex items center justify-center relative">
                     {icon && <i className={`fa-solid fa-${icon} text-4xl text-accent-secondary`}></i>}
-                    {image  && <img loading="lazy" decoding="async" src={image} alt="" className="w-full h-full object-cover" />}
+                    {image  && <img loading="lazy" decoding="async" src={image} alt={alt} className="w-full h-full object-cover" />}
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 from-5% to-60% to-bg-primary/30 mix-blend-hard-light"></div>
                 </div>
                 <div className="px-8 w-full">

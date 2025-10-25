@@ -279,12 +279,12 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                 </div>
                 <div ref={marqueeContainerRef} className="w-[150%] overflow-x-hidden relative pb-16">
                     <div ref={marqueeRef} className="flex [&>img]:w-70 [&>img]:h-70  gap-4 [&>*]:rounded-4xl [&>*]:shadow-xl justify-baseline">
-                        <img loading="lazy" decoding="async" src={brand1} alt="" />
-                        <img loading="lazy" decoding="async" src={brand2} alt="" />
-                        <img loading="lazy" decoding="async" src={brand3} alt="" />
-                        <img loading="lazy" decoding="async" src={brand4} alt="" />
-                        <img loading="lazy" decoding="async" src={brand5} alt="" />
-                        <img loading="lazy" decoding="async" src={brand6} alt="" />
+                        <img alt="Imagem de uma mulher em roupa de banho com a logo da empresa KT" loading="lazy" decoding="async" src={brand1}  />
+                        <img alt="Imagem de uma mulher pousando com um anel com a logo da empresa Karla TI" loading="lazy" decoding="async" src={brand2}  />
+                        <img alt="Imagem de uma mulher com a logo da empresa Tomiartte" loading="lazy" decoding="async" src={brand3}  />
+                        <img alt="Imagem de uma praticante de artes marciais com a logo da empresa Anaz" loading="lazy" decoding="async" src={brand4}  />
+                        <img alt="Imagem de um colar com a logo da empresa Eminenza" loading="lazy" decoding="async" src={brand5}  />
+                        <img alt="Imagem de um homem com um instrumento musical com a logo da empresa Renato Montanha" loading="lazy" decoding="async" src={brand6}  />
                     </div>
                 </div>
                 <div ref={buttonRef} className="relative z-10 w-full">
@@ -300,14 +300,14 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-800 font-light">Quem já voou com a Prance:</h1>
                     <div className="w-full flex flex-col items-center justify-center gap-24">
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>img]:shadow-xl flex justify-between">
-                            <img loading="lazy" decoding="async" ref={image1DesktopRef} src={brand1} alt="" />
-                            <img loading="lazy" decoding="async" ref={image2DesktopRef} src={brand2} alt="" />
-                            <img loading="lazy" decoding="async" ref={image3DesktopRef} src={brand3} alt="" />
+                            <img alt="Imagem de uma mulher em roupa de banho com a logo da empresa KT" loading="lazy" decoding="async" ref={image1DesktopRef} src={brand1}  />
+                            <img alt="Imagem de uma mulher pousando com um anel com a logo da empresa Karla TI" loading="lazy" decoding="async" ref={image2DesktopRef} src={brand2}  />
+                            <img alt="Imagem de uma mulher com a logo da empresa Tomiartte" loading="lazy" decoding="async" ref={image3DesktopRef} src={brand3}  />
                         </div>  
                         <div className="w-full xl:[&>img]:w-80 [&>img]:w-60 xl:[&>img]:h-80 [&>img]:h-60 [&>*]:rounded-4xl [&>*]:shadow-xl flex justify-between">
-                            <img loading="lazy" decoding="async" ref={image4DesktopRef} src={brand4} alt="" />
-                            <img loading="lazy" decoding="async" ref={image5DesktopRef} src={brand5} alt="" />
-                            <img loading="lazy" decoding="async" ref={image6DesktopRef} src={brand6} alt="" />
+                            <img alt="Imagem de uma praticante de artes marciais com a logo da empresa Anaz" loading="lazy" decoding="async" ref={image4DesktopRef} src={brand4}  />
+                            <img alt="Imagem de um colar com a logo da empresa Eminenza" loading="lazy" decoding="async" ref={image5DesktopRef} src={brand5}  />
+                            <img alt="Imagem de um homem com um instrumento musical com a logo da empresa Renato Montanha" loading="lazy" decoding="async" ref={image6DesktopRef} src={brand6}  />
                         </div>
                     </div>
                     <div ref={buttonDesktopRef} className="w-full flex justify-center">

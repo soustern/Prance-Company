@@ -16,7 +16,7 @@ const AnimationWrapper = (): JSX.Element => {
 
     return (
         <div ref={wrapperRef} className="z-100 fixed inset-0 h-screen w-screen bg-[var(--color-bg-primary)] flex items-center justify-center pointer-events-none">
-            <img ref={logoRef} src={logo} alt="Prance Logo" />
+            <img alt="Imagem da logo da empresa contendo um passaro e os dizeres: prance" ref={logoRef} src={logo} />
         </div>
     )
 }
