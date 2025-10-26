@@ -1,7 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
-.font-sans { font-family: 'Cal Sans', system-ui, -apple-system, sans-serif;}
+@font-face {
+  font-family: 'Cal Sans';
+  src: url('./assets/fonts/cal-sans-v2-latin-regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+.font-sans { 
+  font-family: 'Cal Sans', system-ui, -apple-system, sans-serif; 
+}
 
 :root {
   --color-bg-primary: #112648;
