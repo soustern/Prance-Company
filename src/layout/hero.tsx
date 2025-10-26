@@ -6,7 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import  heroMobile  from "../assets/heroMobile.webp";
 import { useWindowSize } from "../hooks/useWindowSize";
 import heroDesktop from "../assets/heroDesktop.webp";
-import { motion } from "motion/react";
+import { FaStar } from 'react-icons/fa6';
 
 gsap.registerPlugin(SplitText)
 
@@ -151,7 +151,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                     <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-8 relative z-10">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                 </div>
                 <div ref={buttonRef} className="relative z-10 w-full">
-                    <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Vamos Conversar"><i className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></i></SecondaryButton>
+                    <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Vamos Conversar"><FaStar className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></FaStar></SecondaryButton>
                 </div>
             </section>  
         )
@@ -167,7 +167,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                         <p ref={paragraphDesktopRef} className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                         <div ref={buttonDesktopRef}>
                             <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
-                                <motion.i variants={{initial: {scale: 1, opacity: 0.7}, hover: {scale: 1.2, opacity: 1}}} transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}  className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></motion.i>
+                                <FaStar  className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></FaStar>
                             </SecondaryButton>
                         </div>
                     </div>

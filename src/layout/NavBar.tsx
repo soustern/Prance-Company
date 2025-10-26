@@ -3,6 +3,12 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import PrimaryButton from "../components/PrimaryButton";
 import { AnimatePresence, motion } from "motion/react";
 import logo from "../assets/logo.webp";
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookF as FaFacebook } from 'react-icons/fa';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
+import { FaXmark } from 'react-icons/fa6';
+import { FaBars } from 'react-icons/fa6';
 
 const NavBar = (): JSX.Element => {
     const size = useWindowSize();
@@ -28,7 +34,7 @@ const NavBar = (): JSX.Element => {
                     <div id="hamburger">
                         <motion.button aria-expanded={isOpen} aria-controls="menu" whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
                         {
-                            isOpen ? <i className="fa-solid fa-xmark text-slate-200 text-4xl"></i> : <i className="fa-solid fa-bars text-slate-200 text-4xl"></i>
+                            isOpen ? <FaXmark className="fa-solid fa-xmark text-slate-200 text-4xl"></FaXmark> : <FaBars className="fa-solid fa-bars text-slate-200 text-4xl"></FaBars>
                         }
                         </motion.button>
                     </div>
@@ -42,7 +48,7 @@ const NavBar = (): JSX.Element => {
                                         <motion.li whileTap={{backgroundColor: "rgba(255, 255, 255, 0.3)"}} key={option[0]} className="py-4 w-full relative" onClick={() => setIsOpen(false)}>
                                             <motion.a href={`#${option[1]}`} className="flex items-center justify-between [will-change: transform, opacity]" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: index * 0.08}}>
                                                 <p className="text-slate-200 text-2xl font-medium">{option[0]}</p>
-                                                <i className="fa-solid fa-arrow-right text-slate-300 text-xl"></i>
+                                                <FaArrowRight className="fa-solid fa-arrow-right text-slate-300 text-xl"></FaArrowRight>
                                             </motion.a>
                                             <motion.div initial={{width: 0}} animate={{width: "100%"}} transition={{duration: 0.2, delay: index * 0.08}}  className="h-[1px] bg-slate-300 left-0 top-full absolute"></motion.div>
                                         </motion.li>
@@ -55,18 +61,18 @@ const NavBar = (): JSX.Element => {
                             <li className="flex items-center gap-2 w-full justify-center">
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.5}}>
                                     <PrimaryButton link="https://www.instagram.com/prancecompany/" className="pointer-events-auto">
-                                        <i className="fa-brands fa-instagram"></i>
+                                        <FaInstagram className="fa-brands fa-instagram"></FaInstagram>
                                     </PrimaryButton>
                                 </motion.div>
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.6}}>
                                     <PrimaryButton link="https://www.facebook.com/prancecompany" className="pointer-events-auto">
-                                        <i className="fa-brands fa-facebook-f"></i>
+                                        <FaFacebook className="fa-brands fa-facebook-f"></FaFacebook>
                                     </PrimaryButton>
                                 </motion.div>
                                 
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.7}}>
                                     <PrimaryButton link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br" className="pointer-events-auto">
-                                        <i className="fa-brands fa-linkedin-in"></i>
+                                        <FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn>
                                     </PrimaryButton>
                                 </motion.div>
                             </li>
