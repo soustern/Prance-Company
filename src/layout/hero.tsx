@@ -143,7 +143,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     return (
             <section id="hero-section" className="relative z-0 min-h-[480px] flex flex-col items-center  bg-bg-primary px-8 pt-25 pb-20">
                 <div className="absolute inset-0">
-                    <img alt="Imagem de um escritorio contendo um notebook da marca apple em cima de uma mesa" src={heroMobile} />
+                    <img fetchPriority="high" alt="Imagem de um escritorio contendo um notebook da marca apple em cima de uma mesa" src={heroMobile} />
                     <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-bg-primary from-30% to-bg-primary/85 bg-blend-hard-light"></div>
                 </div>
                 <div>
@@ -159,7 +159,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
     else {
         return (
             <section id="hero-section" className="h-[90vh] z-0 flex items-center justify-center px-16 relative">
-                <img alt="Imagem de uma mulher elegante e preofissional com uma escritorio de fundo" src={heroDesktop} className="w-full h-full object-cover absolute inset-0 z-0" />
+                <img fetchPriority="high" alt="Imagem de uma mulher elegante e preofissional com uma escritorio de fundo" src={heroDesktop} className="w-full h-full object-cover absolute inset-0 z-0" />
                 <div className="w-full h-full absolute inset-0 z-10 bg-gradient-to-r from-bg-primary from-25% to-70% to-transparent mix-blend-color-burn"></div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 relative z-10">
                     <div className="relative z-20">
