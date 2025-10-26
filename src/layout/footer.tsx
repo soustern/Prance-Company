@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useWindowSize } from "../hooks/useWindowSize"
-import { FaInstagram } from 'react-icons/fa';
+import { AiFillInstagram as FaInstagram } from 'react-icons/ai';
 import { FaFacebookF as FaFacebook } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { IoLogoWhatsapp as FaWhatsapp } from 'react-icons/io';

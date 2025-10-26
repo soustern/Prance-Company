@@ -3,7 +3,7 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import PrimaryButton from "../components/PrimaryButton";
 import { AnimatePresence, motion } from "motion/react";
 import logo from "../assets/logo.webp";
-import { FaInstagram } from 'react-icons/fa';
+import { AiFillInstagram as FaInstagram } from 'react-icons/ai';
 import { FaFacebookF as FaFacebook } from 'react-icons/fa';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa';
