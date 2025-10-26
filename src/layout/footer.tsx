@@ -5,6 +5,13 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useWindowSize } from "../hooks/useWindowSize"
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookF as FaFacebook } from 'react-icons/fa';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { IoLogoWhatsapp as FaWhatsapp } from 'react-icons/io';
+import { FaEnvelope } from 'react-icons/fa';
+import { FaMap } from 'react-icons/fa';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -207,33 +214,33 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
             <section ref={sectionRef} id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center items-center relative px-8 py-16 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-31">
                 <div className="flex flex-col gap-4 pb-4 items-center">
                     <div className="w-full" ref={whatsappRef}>
-                        <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
-                            <i className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></i>
+                        <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-center text-xl origin-left">
+                            <FaWhatsapp className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></FaWhatsapp>
                             <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1">17 99155 2417</p>
                         </motion.a>
                     </div>
                     <div className="w-full" ref={emailRef}>
-                        <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="mailto:contato@prancecompany.com?subject=Olá, gostaria de saber mais sobre a consultoria estratégica." target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
-                            <i className="fa-regular fa-envelope [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
+                        <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="mailto:contato@prancecompany.com?subject=Olá, gostaria de saber mais sobre a consultoria estratégica." target="_blank" className="flex gap-2 items-center text-xl origin-left">
+                            <FaEnvelope className="fa-regular fa-envelope [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></FaEnvelope>
                             <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 ">contato@prancecompany.com</p>
                         </motion.a>
                     </div>
                     <div className="w-full" ref={locationRef}>
-                        <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.8166124,-49.5474288,93777m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex gap-2 items-baseline text-xl origin-left">
-                            <i className="fa-regular fa-map [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
+                        <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.8166124,-49.5474288,93777m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex gap-2 items-center text-xl origin-left">
+                            <FaMap className="fa-regular fa-map [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></FaMap>
                             <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 pb-2">São José do Rio Preto/SP</p>
                         </motion.a>
                     </div>
                 </div>               
                 <div className="flex items-center gap-2 w-full" ref={buttonRef}>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.instagram.com/prancecompany/"><i className="fa-brands fa-instagram"></i></PrimaryButton>
+                        <PrimaryButton link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"/></PrimaryButton>
                     </div>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.facebook.com/prancecompany"><i className="fa-brands fa-facebook-f"></i></PrimaryButton>
+                        <PrimaryButton link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
                     </div>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><i className="fa-brands fa-linkedin-in"></i></PrimaryButton>
+                        <PrimaryButton link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
                     </div>
                 </div>
             </section>
@@ -246,33 +253,33 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                 <div className="w-full max-w-[1200px] items-center justify-between gap-20 flex">
                     <div className="flex flex-col gap-4  items-baseline justify-center">
                         <div className="w-full" ref={whatsappDesktopRef}>
-                            <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
-                                <i className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></i>
+                            <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-center text-2xl origin-left">
+                                <FaWhatsapp className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></FaWhatsapp>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1">17 99155 2417</p>
                             </motion.a>
                         </div>
                         <div className="w-full" ref={emailDesktopRef}>
-                            <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="mailto:contato@prancecompany.com?subject=Olá, gostaria de saber mais sobre a consultoria estratégica." target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
-                                <i className="fa-regular fa-envelope [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
+                            <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="mailto:contato@prancecompany.com?subject=Olá, gostaria de saber mais sobre a consultoria estratégica." target="_blank" className="flex gap-2 items-center text-2xl origin-left">
+                                <FaEnvelope className="fa-regular fa-envelope [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></FaEnvelope>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 ">contato@prancecompany.com</p>
                             </motion.a>
                         </div>
                         <div className="w-full" ref={locationDesktopRef}>
-                            <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.8166124,-49.5474288,93777m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex gap-2 items-baseline text-2xl origin-left">
-                                <i className="fa-regular fa-map [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></i>
+                            <motion.a whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://www.google.com/maps/place/S%C3%A3o+Jos%C3%A9+do+Rio+Preto,+SP/@-20.8166124,-49.5474288,93777m/data=!3m2!1e3!4b1!4m6!3m5!1s0x94bdad614c2df789:0x8f2fb0f070642c09!8m2!3d-20.8127115!4d-49.376521!16s%2Fg%2F1223kj90?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" className="flex gap-2 items-center text-2xl origin-left">
+                                <FaMap className="fa-regular fa-map [will-change: opacity, transform] text-light font-light text-accent-primary relative z-10"></FaMap>
                                 <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1 ">São José do Rio Preto/SP</p>
                             </motion.a>
                         </div>
                     </div>               
                     <div className="flex flex-col items-end justify-center gap-2 w-full">
                             <div ref={instagramDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><i className="fa-brands fa-instagram"></i></PrimaryButton>
+                                <PrimaryButton className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"></FaInstagram></PrimaryButton>
                             </div>
                             <div ref={facebookDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><i className="fa-brands fa-facebook-f"></i></PrimaryButton>
+                                <PrimaryButton className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
                             </div>
                             <div ref={linkedinDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><i className="fa-brands fa-linkedin-in"></i></PrimaryButton>
+                                <PrimaryButton className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
                             </div>
                     </div>
                 </div>
