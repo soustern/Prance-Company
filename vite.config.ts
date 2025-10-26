@@ -5,9 +5,11 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import Sitemap from 'vite-plugin-sitemap';
 import { VitePWA } from 'vite-plugin-pwa';
+import htmlInject from 'vite-plugin-html-inject';
 
 export default defineConfig({
   plugins: [
+    htmlInject(),
     react(),
     tailwindcss(),
     Sitemap({ hostname: 'https://www.prancecompany.com/' }),
