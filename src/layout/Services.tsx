@@ -411,9 +411,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                 </div>
                 <div className="relative cards flex flex-col mb-23 z-10">
                     <div className="card-wrapper flex flex-col h-[120vh] relative items-center pointer-events-none">
-                        <Card alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                        <Card alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                        <Card alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardRef} className="z-30 card absolute top-120 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                        <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                        <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardRef} className="z-20 card absolute top-100 opacity-0" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                        <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardRef} className="z-30 card absolute top-120 opacity-0" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                     </div>
                 </div>
                 <div className="relative z-10 h-[220px]"></div>
@@ -428,7 +428,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     Fundou a Prance Company para transformar marcas em referências no mercado.</p>
                     <div className="absolute inset-0 z-0 w-[120%] h-full bg-gradient-to-t from-[#0d1824] to-transparent"></div>
                     <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonMobileRef}>
-                        <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
+                        <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
                     </div>
                 </div>
             </section>
@@ -443,9 +443,9 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                     <p ref={paragraphDesktopRef}  className=" text-slate-400 relative z-10 text-xl font-extralight leading-relaxed text-center">Não é sorte, é estratégia. Toda marca de sucesso segue uma base sólida. Nossos 3 pilares mostram o caminho para construir autoridade, gerar conexão real e escalar resultados no digital.</p>
                 </div>
                 <div className="flex justify-between w-full max-w-[1200px]">
-                    <Card alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardDesktopRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
-                    <Card alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardDesktopRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
-                    <Card alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardDesktopRef} className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
+                    <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagems de papelaria referentes a identidade visual de uma marca" ref={firstCardDesktopRef} className="z-10 card" heading="Branding & Design" paragraph="O segredo para uma marca irresistível começa aqui. Identidade, posicionamento e estética pensados para gerar confiança imediata e conquistar espaço na mente do seu público." image={card1}></Card>
+                    <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagem de um smartphone com icones de redes sociais" ref={secondCardDesktopRef} className="z-20 card" heading="Conteúdo & Social Media" paragraph="O motor que mantém sua marca em movimento. Estratégias de crescimento aliadas a conteúdo estratégico que conecta, engaja e cria um público fiel." image={card2}></Card>
+                    <Card ariaLabel="Abrir o WhatsApp da empresa" alt="Imagem da tela de um computador com graficos de pergormance" ref={thirdCardDesktopRef} className="z-30 card" heading="Mídia Paga & Performance" paragraph="Não basta ser visto, é preciso converter. Estruturamos campanhas inteligentes que transformam atenção em vendas, com métricas sólidas e foco total em resultados." image={card3}></Card>
                 </div>
                 <div className="w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center mt-20">
                     <div className="relative z-20">
@@ -458,7 +458,7 @@ const Services = ({fontsReady}: servicesProps): JSX.Element => {
                             Ao longo da carreira, colaborou com empresas como FAJ Empreendimentos, UNIRP, WebPic, Energy Field, Tyson Burger, Savannah Brand e Luzia Fazzolli. Mais tarde, fundou a Prance Company, unindo toda sua expertise para transformar marcas em referências no mercado.
                         </p>
                         <div ref={buttonDesktopRef} className="w-full">
-                            <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
+                            <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                         </div>
                     </div>
                     <div ref={imageDesktopRef} className="relative z-20 flex items-center justify-end">

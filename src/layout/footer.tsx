@@ -214,7 +214,7 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
             <section ref={sectionRef} id="footer-section" style={{clipPath: `polygon(0 0%, 100% 15%, 100% 100%, 0% 100%)`}} className="flex flex-col justify-center items-center relative px-8 py-16 pt-26 bg-gradient-to-tl from-slate-900 to-bg-primary to-60% -mt-31">
                 <div className="flex flex-col gap-4 pb-4 items-center">
                     <div className="w-full" ref={whatsappRef}>
-                        <motion.a  whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-center text-xl origin-left">
+                        <motion.a   whileTap={{scale: 0.9}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} href="https://wa.link/173tl9" target="_blank" className="flex gap-2 items-center text-xl origin-left">
                             <FaWhatsapp className="fa-brands fa-whatsapp [will-change: opacity, transform] text-center font-light text-accent-primary relative z-10"></FaWhatsapp>
                             <p className="[will-change: opacity, transform] text-light text-slate-300 relative z-10 underline decoration-accent-secondary decoration-1">17 99155 2417</p>
                         </motion.a>
@@ -234,13 +234,13 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                 </div>               
                 <div className="flex items-center gap-2 w-full" ref={buttonRef}>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"/></PrimaryButton>
+                        <PrimaryButton ariaLabel="Abrir o Instagram da empresa" link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"/></PrimaryButton>
                     </div>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
+                        <PrimaryButton ariaLabel="Abrir o Facebook da empresa" link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
                     </div>
                     <div className="w-full">
-                        <PrimaryButton link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
+                        <PrimaryButton ariaLabel="Abrir o Linkedin da empresa" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
                     </div>
                 </div>
             </section>
@@ -273,13 +273,13 @@ const Footer = ({fontsReady}: footerProps): JSX.Element => {
                     </div>               
                     <div className="flex flex-col items-end justify-center gap-2 w-full">
                             <div ref={instagramDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"></FaInstagram></PrimaryButton>
+                                <PrimaryButton ariaLabel="Abrir o Instagram da empresa" className="max-w-[250px]" link="https://www.instagram.com/prancecompany/"><FaInstagram className="fa-brands fa-instagram"></FaInstagram></PrimaryButton>
                             </div>
                             <div ref={facebookDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
+                                <PrimaryButton ariaLabel="Abrir o Facebook da empresa" className="max-w-[250px]" link="https://www.facebook.com/prancecompany"><FaFacebook className="fa-brands fa-facebook-f"></FaFacebook></PrimaryButton>
                             </div>
                             <div ref={linkedinDesktopRef} className="w-full flex justify-end">
-                                <PrimaryButton className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
+                                <PrimaryButton ariaLabel="Abrir o Instagram da empresa" className="max-w-[250px]" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br"><FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn></PrimaryButton>
                             </div>
                     </div>
                 </div>

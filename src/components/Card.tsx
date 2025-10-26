@@ -8,10 +8,11 @@ interface cardProps {
     className?: string
     image?: string
     alt?: string
+    ariaLabel: string
 }
 
 
-const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className, image, alt}, ref): JSX.Element => {
+const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, className, image, alt, ariaLabel}, ref): JSX.Element => {
     return (
         <article ref={ref} className={`flex flex-col overflow-hidden bg-slate-200 rounded-4xl pb-8 shadow-xl border h-[470px] border-slate-200 max-w-[320px] ${className} pointer-events-auto`}>
             <div className="flex flex-col gap-8 items-center justify-center pb-4">
@@ -26,7 +27,7 @@ const Card = forwardRef<HTMLElement, cardProps>(({heading, paragraph, icon, clas
             </div> 
             <div className="px-8 flex flex-col justify-between flex-1">
                 <p className="text-slate-700 font-light">{paragraph}</p>
-                <PrimaryButton link="https://wa.link/173tl9" className="pointer-events-auto relative z-50" text="Saiba Mais">
+                <PrimaryButton ariaLabel={ariaLabel} link="https://wa.link/173tl9" className="pointer-events-auto relative z-50" text="Saiba Mais">
                 </PrimaryButton>
             </div>
         </article> 

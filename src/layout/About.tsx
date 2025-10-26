@@ -325,7 +325,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                     <p ref={aboutParagraph} className="[will-change: transform, opacity] relative z-10 font-light text-slate-700 pb-8">Consultoria de marketing digital e branding que transforma a autoridade de empresas em resultados reais através de planejamento, execução e acompanhamento estratégico.</p>
                 </div>
                 <div className="w-full [will-change: transform, opacity] relative z-50" ref={buttonRef}>
-                    <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
+                    <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" text="Vamos conversar" link="https://wa.link/173tl9" className="pointer-events-auto" ></PrimaryButton>
                 </div>
             </section>
         )
@@ -343,7 +343,7 @@ const About = ({fontsReady}: aboutProps): JSX.Element => {
                         <p ref={paragraphDesktopRef} className=" text-slate-700 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Somos uma consultoria especializada em fornecer serviços de alto nível em marketing digital e branding para empresas que visam melhorar seu posicionamento e alcançar novos voos.
                         <br></br><br></br>Planejamento completo, execução inteligente e acompanhamento contínuo para transformar autoridade em resultados reais.</p>
                         <div ref={buttonDesktopRef} className="w-full">
-                            <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
+                            <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                         </div>
                     </div>
                 </div>

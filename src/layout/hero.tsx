@@ -151,7 +151,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                     <p ref={paragraphRef} className="text-lg font-normal text-slate-400 pb-8 relative z-10">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                 </div>
                 <div ref={buttonRef} className="relative z-10 w-full">
-                    <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Vamos Conversar"><FaStar className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></FaStar></SecondaryButton>
+                    <SecondaryButton ariaLabel="Abrir o WhatsApp da empresa" func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-5xl bg-gradient-to-t from-slate-900/40 from-5% to-60% to-bg-primary" text="Vamos Conversar"><FaStar className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></FaStar></SecondaryButton>
                 </div>
             </section>  
         )
@@ -166,7 +166,7 @@ const Hero = ({fontsReady}: heroProps): JSX.Element => {
                         <h1 ref={headingDesktopRef} className="relative z-10 text-4xl text-slate-300 pb-8 font-light"><span className="text-accent-secondary font-medium">Do conceito ao lucro:</span><br></br> expertise que prepara sua marca para voar alto.</h1>
                         <p ref={paragraphDesktopRef} className=" text-slate-400 pb-12 relative z-10 text-xl font-extralight leading-relaxed">Soluções em marketing digital, conteúdo estratégico, branding e soluções para negócios que querem crescer com clareza e impacto.</p>
                         <div ref={buttonDesktopRef}>
-                            <SecondaryButton func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
+                            <SecondaryButton ariaLabel="Abrir o WhatsApp da empresa" func={() => window.open("https://wa.link/173tl9", "_blank")} className="border-[var(--color-accent-secondary)] text-slate-200 text-lg bg-gradient-to-t from-slate-900 from-5% to-60% to-bg-primary max-w-[300px] transform hover:scale-101 hover:shadow-2xl transition-all" text="Vamos Conversar">
                                 <FaStar  className="fa-solid fa-star text-xl text-[var(--color-accent-secondary)]"></FaStar>
                             </SecondaryButton>
                         </div>

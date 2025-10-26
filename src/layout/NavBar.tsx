@@ -32,7 +32,7 @@ const NavBar = (): JSX.Element => {
                         <img src={logo} className="max-w-[120px]" alt="" />
                     </div>
                     <div id="hamburger">
-                        <motion.button aria-expanded={isOpen} aria-controls="menu" whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
+                        <motion.button aria-expanded={isOpen} aria-label="Abrir o menu" aria-controls="menu" whileTap={{scale: 0.8}} transition={{duration: 0.05, type: "spring", stiffness: 500, damping: 30}} className="cursor-pointer py-3" onClick={() => setIsOpen(!isOpen)}>
                         {
                             isOpen ? <FaXmark className="fa-solid fa-xmark text-slate-200 text-4xl"></FaXmark> : <FaBars className="fa-solid fa-bars text-slate-200 text-4xl"></FaBars>
                         }
@@ -56,22 +56,22 @@ const NavBar = (): JSX.Element => {
                                 })
                             }
                             <motion.li className="w-full [will-change: transform, opacity]" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.4}}>
-                                <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar"></PrimaryButton>
+                                <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" link="https://wa.link/60n9e2" text="Vamos conversar"></PrimaryButton>
                             </motion.li>
                             <li className="flex items-center gap-2 w-full justify-center">
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.5}}>
-                                    <PrimaryButton link="https://www.instagram.com/prancecompany/" className="pointer-events-auto">
+                                    <PrimaryButton ariaLabel="Navegar ate o Instagram da empresa" link="https://www.instagram.com/prancecompany/" className="pointer-events-auto">
                                         <FaInstagram className="fa-brands fa-instagram"></FaInstagram>
                                     </PrimaryButton>
                                 </motion.div>
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.6}}>
-                                    <PrimaryButton link="https://www.facebook.com/prancecompany" className="pointer-events-auto">
+                                    <PrimaryButton ariaLabel="Navegar ate o Facebook da empresa" link="https://www.facebook.com/prancecompany" className="pointer-events-auto">
                                         <FaFacebook className="fa-brands fa-facebook-f"></FaFacebook>
                                     </PrimaryButton>
                                 </motion.div>
                                 
                                 <motion.div className="pointer-events-none w-full" initial={{translateY: 10, opacity: 0}} animate={{translateY: 0, opacity: 1}} transition={{duration: 0.2, delay: 0.7}}>
-                                    <PrimaryButton link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br" className="pointer-events-auto">
+                                    <PrimaryButton ariaLabel="Navegar ate o linkedin da empresa" link="https://www.linkedin.com/company/prance-company/?originalSubdomain=br" className="pointer-events-auto">
                                         <FaLinkedinIn className="fa-brands fa-linkedin-in"></FaLinkedinIn>
                                     </PrimaryButton>
                                 </motion.div>
@@ -105,7 +105,7 @@ const NavBar = (): JSX.Element => {
                         }
                     </ul>
                     {/* This -mt[130px] is used here to truly centralize the navOption on the screen due to the logo having 130px less in width when compared to the button */}
-                    <PrimaryButton link="https://wa.link/60n9e2" text="Vamos conversar" className="2xl:-ml-[130px] max-w-[250px]"></PrimaryButton>
+                    <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" link="https://wa.link/60n9e2" text="Vamos conversar" className="2xl:-ml-[130px] max-w-[250px]"></PrimaryButton>
                 </div>
             </nav>
         )

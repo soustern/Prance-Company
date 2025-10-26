@@ -288,7 +288,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                     </div>
                 </div>
                 <div ref={buttonRef} className="relative z-10 w-full">
-                    <PrimaryButton link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
+                    <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" link="https://wa.link/173tl9" text="Vamos conversar"></PrimaryButton>
                 </div>
             </section>
         )
@@ -311,7 +311,7 @@ const Brands = ({fontsReady}: brandsProps): JSX.Element => {
                         </div>
                     </div>
                     <div ref={buttonDesktopRef} className="w-full flex justify-center">
-                        <PrimaryButton text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
+                        <PrimaryButton ariaLabel="Abrir o WhatsApp da empresa" text="Vamos conversar" link="https://wa.link/173tl9" className="max-w-[250px]" ></PrimaryButton>
                     </div>
                 </div>
             </section>
